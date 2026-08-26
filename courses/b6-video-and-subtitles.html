@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="A 14-second clip is not a shorter version of a five-minute exchange, it is a different claim. Session 6 covers what clipping does to context, the subtitle pipeline and its mandatory human review gate, the four error classes it must catch, and why a dropped negation is the costliest of them all.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Video, subtitles and clipping - learn ai media with phoebe">
+<meta property="og:description" content="What a clip does to context, the subtitle review gate, the four error classes it must catch, and why a dropped negation is the costliest error a subtitle can make.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/courses/b6-video-and-subtitles.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Video, subtitles and clipping - learn ai media with phoebe">
+<meta name="twitter:description" content="A clip is not a shorter exchange, it is a different claim. Plus the subtitle review gate and its four error classes.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Producer session 6 · Video, subtitles and clipping - learn ai media with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-media-domain-with-phoebe</a> / Producer session 6 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI Media with Phoebe · Producer track · Session 6 of 10</div>
+    <h1>Video, subtitles and <span class="accent">clipping</span></h1>
+    <p class="sub">The Harbour Ledger's video desk is two people who are also the photographers, and they have four hours of council chamber footage from the port expansion debate. AI will now cut that into social clips faster than they can watch it, subtitle it in three languages before lunch, and write the alt text on the way out. Two of those are genuine wins. One of them is the single easiest way in this whole track to publish something false using nothing but true material. Tonight: what a clip does to context, the subtitle pipeline and the human gate it cannot ship without, the four error classes that gate exists to catch, and why a dropped "not" is the most expensive word in the building.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Producer track</span>
+      <span class="chip audience">Video desks · reporters · social producers</span>
+      <span class="chip audience">Bring footage you have not cut</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-16 · The clip problem + subtitles</span>
+      <span class="a3" style="flex:5">16-40 · Build-along: cut the chamber footage</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where this sits in the chain</h2>
+    </div>
+    <p class="lede">This is the second of the two <strong>Package</strong> sessions. b5 did audio, and the failure mode there was a join you could not see. Video has the same failure mode with a much bigger audience and a much faster distribution path: a clip travels further than the story it came from, it arrives without the page around it, and it is watched by people who will never see the full exchange. The publish chain still applies - <strong>Tip → Verify → Report → Package → Publish</strong>, with stage 2 as the gate - and so does the trust line: <strong>the claim, the attribution, the correction</strong>. What changes here is that the attribution can be perfect, the footage can be genuine, and the claim can still be false, purely because of where you started and stopped.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A clip test you can apply in ten seconds, a subtitle review pass structured around four named error classes, your desk's caption rule for archive footage, and a clip-candidate prompt that hands you context instead of cuts.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: THE CLIP PROBLEM ============ -->
+  <section class="section" id="clip-problem">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · the honest core of this session</span>
+      <h2>The clip problem <span class="tag concept">7 min live</span></h2>
+    </div>
+    <p class="lede">Here is the thing that has to land before anything else tonight. <strong>A 14-second clip is not a shorter version of a five-minute exchange. It is a different claim.</strong> Remove the question and you change what the answer answers. Remove the pause and you change whether someone was evasive. Remove the follow-up and you change whether a challenge happened at all. None of that requires editing a single frame dishonestly. It requires choosing where to start and where to stop, which is an editorial judgment - and AI has just made that judgment effortless, which means it stops being a judgment and becomes a default unless you make it explicit.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 388" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One council chamber exchange shown at full length as five segments, and as three candidate clips, with what each clip implies compared with what actually happened.">
+        <style>
+          .clH { font: 700 13px Inter, sans-serif; fill: #0A4C60; letter-spacing: .04em; }
+          .clT { font: 700 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .clTi { font: 700 12.5px Inter, sans-serif; fill: #16323A; }
+          .clS { font: 400 11px Inter, sans-serif; fill: #FFFFFF; opacity: .92; }
+          .clSi { font: 400 11px Inter, sans-serif; fill: #16323A; opacity: .85; }
+          .clX { font: 600 11px Inter, sans-serif; fill: #5F7C85; }
+          .clC { font: 700 12.5px Inter, sans-serif; fill: #0A4C60; }
+          .clSub { font: 400 11.5px Inter, sans-serif; fill: #5F7C85; }
+          .clBad { font: 700 11.5px Inter, sans-serif; fill: #991B1B; }
+          .clOk { font: 700 11.5px Inter, sans-serif; fill: #0E7490; }
+          .clB { font: 400 11.5px Inter, sans-serif; fill: #16323A; }
+          .clN { font: 600 13px Inter, sans-serif; fill: #5A2C05; }
+        </style>
+        <defs><marker id="clHead" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#0E7490"/></marker></defs>
+
+        <text class="clH" x="20" y="28">THE FULL EXCHANGE · COUNCIL CHAMBER · 5 MIN 12 SEC</text>
+        <rect x="20" y="48" width="190" height="54" rx="7" fill="#0A4C60"/><text class="clT" x="115" y="73" text-anchor="middle">THE QUESTION</text><text class="clS" x="115" y="90" text-anchor="middle">on the 40% claim</text>
+        <rect x="216" y="48" width="195" height="54" rx="7" fill="#0E7490"/><text class="clT" x="313" y="73" text-anchor="middle">THE ANSWER</text><text class="clS" x="313" y="90" text-anchor="middle">"a forty per cent cut"</text>
+        <rect x="417" y="48" width="85" height="54" rx="7" fill="#A5DCE8"/><text class="clTi" x="459" y="73" text-anchor="middle">PAUSE</text><text class="clSi" x="459" y="90" text-anchor="middle">4 sec</text>
+        <rect x="508" y="48" width="165" height="54" rx="7" fill="#0E7490"/><text class="clT" x="590" y="73" text-anchor="middle">FOLLOW-UP</text><text class="clS" x="590" y="90" text-anchor="middle">"per what, exactly?"</text>
+        <rect x="679" y="48" width="181" height="54" rx="7" fill="#E2711D"/><text class="clT" x="769" y="73" text-anchor="middle">THE CORRECTION</text><text class="clS" x="769" y="90" text-anchor="middle">"per container, 2031"</text>
+        <path d="M20,112 L860,112" stroke="#DCE9ED" stroke-width="2"/><text class="clX" x="20" y="128">0:00</text><text class="clX" x="860" y="128" text-anchor="end">5:12</text>
+        <path d="M313,134 L313,142" stroke="#0E7490" stroke-width="2.5" fill="none" marker-end="url(#clHead)"/>
+
+        <rect x="20" y="146" width="270" height="132" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="clC" x="36" y="170">CLIP A · 14 SECONDS</text><text class="clSub" x="36" y="190">the answer, question cut</text><path d="M36,202 L274,202" stroke="#FCA5A5" stroke-width="1.5"/>
+        <text class="clBad" x="36" y="224">IMPLIES: a flat 40% claim</text><text class="clB" x="36" y="246">ACTUALLY: an answer to a much</text><text class="clB" x="36" y="264">narrower question you removed</text>
+
+        <rect x="305" y="146" width="270" height="132" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="clC" x="321" y="170">CLIP B · 22 SECONDS</text><text class="clSub" x="321" y="190">the answer plus the pause</text><path d="M321,202 L559,202" stroke="#FCA5A5" stroke-width="1.5"/>
+        <text class="clBad" x="321" y="224">IMPLIES: he was evasive</text><text class="clB" x="321" y="246">ACTUALLY: he was reading the</text><text class="clB" x="321" y="264">filing on the desk in front of him</text>
+
+        <rect x="590" y="146" width="270" height="132" rx="8" fill="#ECF9FC" stroke="#A5DCE8" stroke-width="2"/>
+        <text class="clC" x="606" y="170">CLIP C · 48 SECONDS</text><text class="clSub" x="606" y="190">question, answer, follow-up</text><path d="M606,202 L844,202" stroke="#A5DCE8" stroke-width="1.5"/>
+        <text class="clOk" x="606" y="224">IMPLIES: what happened</text><text class="clB" x="606" y="246">ACTUALLY: the same thing.</text><text class="clB" x="606" y="264">Shared less. Still true.</text>
+
+        <rect x="20" y="300" width="14" height="14" rx="3" fill="#E2711D"/><text class="clN" x="44" y="312">A clip is not a shorter exchange. It is a different claim, published at full authority.</text>
+        <rect x="20" y="328" width="14" height="14" rx="3" fill="#E2711D"/><text class="clN" x="44" y="340">Cut the question and the answer answers something else. Cut the pause and you invent a mood.</text>
+        <rect x="20" y="356" width="14" height="14" rx="3" fill="#E2711D"/><text class="clN" x="44" y="368">The test: would the speaker recognise their own meaning in this clip? If not, do not cut it.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - one exchange, three candidate clips, three different claims</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The test: would the speaker recognise their meaning in this clip?<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>You need something you can run in ten seconds at 11pm, because that is when clips get made. This is it, and it works because it is not about your intentions, it is about the artefact you are about to publish. <strong>Play the clip. Then ask: if the person in it watched this, would they recognise what they meant?</strong> Not "would they like it" - people dislike accurate clips all the time, and that is journalism. Recognise. Would they say "yes, that is what I was saying, and you have caught me saying it"?</p>
+        <ul>
+          <li><strong>Clip A fails.</strong> He said 40% in answer to a specific, narrow question. Cut the question and he is making a flat public claim he never made in that form.</li>
+          <li><strong>Clip B fails harder,</strong> because it is subtler. A four-second pause reads as evasion when it is actually someone finding a page. Nothing was added: a physical fact about the room was removed.</li>
+          <li><strong>Clip C passes.</strong> Longer, it will travel less far, and it is the one you can defend at length and in public without a single qualification.</li>
+        </ul>
+        <p>When clipping was slow, the judgment happened by itself - somebody scrubbed the timeline and knew what sat either side of the cut because they had just watched it. That knowledge was a by-product of the labour. Remove the labour and the by-product goes with it, and nobody notices, because the output looks the same. So reinstate it deliberately: <strong>the question travels with the answer</strong>, on screen as text if it will not fit; <strong>if a challenge happened, it goes in the clip</strong>, because publishing an unchallenged claim you did in fact challenge misrepresents your own journalism; <strong>silence is content</strong>, so pauses and glances at papers are things that happened rather than runtime to reclaim; and <strong>every clip carries a one-line note on what it omits</strong>. If you cannot write that line, you do not understand the clip yet.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The port expansion story is exactly this shape.</strong> The press release claims a 40% emissions cut. The filing says 40% <em>per container</em>, on a projection, by 2031. In the chamber, the operations director says "a forty per cent cut", is asked "per what, exactly?", pauses, and corrects himself. Clip A publishes the press release's version of reality using genuine footage of a man being honest. There is no deception in any frame. The deception is entirely in the in and out points.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What a clip does once it leaves your site<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Design every clip for the worst realistic case, because you control none of these:</p>
+        <ul>
+          <li><strong>It will be reposted without your caption.</strong> Anything essential that lives only in the caption is effectively not published.</li>
+          <li><strong>It will be re-clipped by someone else.</strong> Your 48 seconds becomes their 12. Ask what the most damaging 12 seconds of your own clip would be.</li>
+          <li><strong>It will outlive the story.</strong> Clips resurface years later attached to whatever is happening then, so a date on screen is cheap and permanent.</li>
+          <li><strong>It will be someone's only exposure to the story.</strong> Most people who see the clip will never open the article, so the clip has to be true on its own, not true-if-you-read-the-piece.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: SUBTITLES ============ -->
+  <section class="section" id="subtitles">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the win with a gate on it</span>
+      <h2>Subtitles, translation and localisation <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Subtitles are one of the largest, most straightforward wins AI has handed a video desk. Every piece of video captioned, at a cost that used to make it a luxury, reaching deaf and hard-of-hearing audiences, people in noisy places, and the very large number of people who simply watch with sound off. Take the win. And then hold on to one fact about it: <strong>a wrong subtitle is published at exactly the same authority as a right one.</strong> There is no hedge, no "approximately", no tone of voice. It is white text on a black bar, and it reads as the record of what a person said.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 376" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The subtitle pipeline from source audio to publication, with a mandatory human review gate, and the four error classes it must catch - names, numbers, technical terms and dropped negations, the last being the highest cost.">
+        <style>
+          .sbT { font: 700 13px Inter, sans-serif; fill: #FFFFFF; }
+          .sbS { font: 400 11.5px Inter, sans-serif; fill: #FFFFFF; opacity: .92; }
+          .sbG { font: 700 13px Inter, sans-serif; fill: #0E7490; }
+          .sbK { font: 700 10.5px Inter, sans-serif; fill: #E2711D; letter-spacing: .08em; }
+          .sbKr { font: 700 10.5px Inter, sans-serif; fill: #991B1B; letter-spacing: .08em; }
+          .sbB { font: 400 11.5px Inter, sans-serif; fill: #16323A; }
+          .sbP { font: 700 10.5px Inter, sans-serif; fill: #FFFFFF; letter-spacing: .06em; }
+          .sbN { font: 600 13px Inter, sans-serif; fill: #5A2C05; }
+          .sbWire { stroke: #0E7490; stroke-width: 2.5; fill: none; marker-end: url(#sbHead); }
+        </style>
+        <defs><marker id="sbHead" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#0E7490"/></marker></defs>
+
+        <rect x="20" y="26" width="150" height="52" rx="8" fill="#0A4C60"/><text class="sbT" x="34" y="48">1 · SOURCE AUDIO</text><text class="sbS" x="34" y="66">the raw track</text>
+        <rect x="195" y="26" width="150" height="52" rx="8" fill="#0E7490"/><text class="sbT" x="209" y="48">2 · MACHINE PASS</text><text class="sbS" x="209" y="66">fast, cheap, wrong</text>
+        <rect x="370" y="26" width="150" height="52" rx="8" fill="#E2711D"/><text class="sbT" x="384" y="48">3 · HUMAN REVIEW</text><text class="sbS" x="384" y="66">the gate</text>
+        <rect x="545" y="26" width="150" height="52" rx="8" fill="#0E7490"/><text class="sbT" x="559" y="48">4 · FORMAT</text><text class="sbS" x="559" y="66">burned-in or soft</text>
+        <rect x="720" y="26" width="150" height="52" rx="8" fill="#0A4C60"/><text class="sbT" x="734" y="48">5 · PUBLISH</text><text class="sbS" x="734" y="66">published as fact</text>
+        <path class="sbWire" d="M170,52 L190,52"/><path class="sbWire" d="M345,52 L365,52"/><path class="sbWire" d="M520,52 L540,52"/><path class="sbWire" d="M695,52 L715,52"/>
+
+        <rect x="20" y="100" width="840" height="32" rx="8" fill="#ECF9FC" stroke="#A5DCE8" stroke-width="2"/>
+        <text class="sbG" x="36" y="121">STAGE 3 IS A GATE, NOT A TIDY-UP. IT EXISTS TO CATCH THESE FOUR CLASSES, EVERY TIME.</text>
+
+        <rect x="20" y="148" width="200" height="118" rx="8" fill="#FDF0E2" stroke="#E2711D" stroke-width="2"/>
+        <text class="sbK" x="34" y="170">1 · NAMES</text><text class="sbB" x="34" y="194">"Aitcheson" becomes</text><text class="sbB" x="34" y="212">"Atkinson"</text>
+        <rect x="34" y="226" width="104" height="22" rx="6" fill="#E2711D"/><text class="sbP" x="46" y="241">HIGH COST</text>
+
+        <rect x="230" y="148" width="200" height="118" rx="8" fill="#FDF0E2" stroke="#E2711D" stroke-width="2"/>
+        <text class="sbK" x="244" y="170">2 · NUMBERS</text><text class="sbB" x="244" y="194">"40% per container"</text><text class="sbB" x="244" y="212">becomes "40%"</text>
+        <rect x="244" y="226" width="104" height="22" rx="6" fill="#E2711D"/><text class="sbP" x="256" y="241">HIGH COST</text>
+
+        <rect x="440" y="148" width="200" height="118" rx="8" fill="#FDF0E2" stroke="#E2711D" stroke-width="2"/>
+        <text class="sbK" x="454" y="170">3 · TERMS</text><text class="sbB" x="454" y="194">"berthing" becomes</text><text class="sbB" x="454" y="212">"birthing"</text>
+        <rect x="454" y="226" width="120" height="22" rx="6" fill="#0E7490"/><text class="sbP" x="466" y="241">MEDIUM COST</text>
+
+        <rect x="650" y="148" width="200" height="118" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="sbKr" x="664" y="170">4 · NEGATION</text><text class="sbB" x="664" y="194">"does not cut" becomes</text><text class="sbB" x="664" y="212">"does cut"</text>
+        <rect x="664" y="226" width="126" height="22" rx="6" fill="#991B1B"/><text class="sbP" x="676" y="241">HIGHEST COST</text>
+
+        <rect x="20" y="296" width="14" height="14" rx="3" fill="#E2711D"/><text class="sbN" x="44" y="308">A wrong subtitle publishes at exactly the same authority as a right one. There is no hedge.</text>
+        <rect x="20" y="324" width="14" height="14" rx="3" fill="#E2711D"/><text class="sbN" x="44" y="336">A dropped negation reverses the claim and still reads as a quote. One missing word.</text>
+        <rect x="20" y="352" width="14" height="14" rx="3" fill="#E2711D"/><text class="sbN" x="44" y="364">Soft subtitles can be corrected in place. Burned-in ones need a re-upload, so check harder.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the subtitle pipeline, the review gate, and the four error classes</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The review pass, and the dropped "not"<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The error classes are the same family you met in b5, because they come from the same underlying process. What changes is the consequence: a transcript error is caught by an editor reading, a subtitle error is caught by an audience watching.</p>
+        <ul>
+          <li><strong>Names.</strong> Every proper noun checked against a written source: councillors, companies, terminals, streets. A misspelled name on screen is the first thing the person named will notice, and the last thing you get to explain.</li>
+          <li><strong>Numbers and units.</strong> Not just the digits, the unit. "40%" and "40% per container" are different claims, and dropping three words on screen turns the filing back into the press release.</li>
+          <li><strong>Technical terms.</strong> Domain vocabulary the model has not heard often - berthing, dredging, TEU, scope 3. Build a term list for a running story and reuse it.</li>
+          <li><strong>Negations.</strong> This is the one. A dropped "not", "never", "no longer" or "unable to" reverses the claim while leaving a perfectly fluent, quotable sentence on screen under a real person's face. Highest cost, least visible in review, because the line still reads well.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The one-line rule for the gate</strong>
+          Nothing ships with machine subtitles that a person has not watched with the sound on. Not "reviewed the file" - watched the video, at normal speed, listening, then a short targeted second pass over every negation, every number and every name. The errors that matter are the ones where the text is fluent and the audio disagrees, and a fluent line only fails against the audio.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Burned-in or soft, and why it changes your risk<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>This looks like a formatting choice and it is really a corrections choice.</p>
+        <table class="clean">
+          <thead><tr><th></th><th>Burned-in</th><th>Soft subtitle track</th></tr></thead>
+          <tbody>
+            <tr><td>Survives reposting</td><td>Yes, always</td><td>No, usually stripped</td></tr>
+            <tr><td>Correctable after publishing</td><td>No, needs a re-upload</td><td>Yes, replace the track</td></tr>
+            <tr><td>Viewer can turn it off</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Multiple languages</td><td>One version per language</td><td>Many tracks, one file</td></tr>
+            <tr><td>Accessibility tooling and search</td><td>Invisible to both</td><td>Machine-readable</td></tr>
+          </tbody>
+        </table>
+        <p>The position most desks land on: <strong>soft tracks on your own site</strong>, where they are correctable, searchable and switchable, and <strong>burned-in for social</strong>, where soft tracks do not survive the trip. Which means the social version carries the higher risk and gets the harder check, because it is the one you cannot fix and the one that travels furthest.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Translation: when it needs disclosure, and how a quote is marked<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Machine translation extends your reach in a way that used to require staff you did not have. The rules that keep it honest:</p>
+        <ul>
+          <li><strong>A translated quote is marked as translated.</strong> Always, in the caption or on screen. A reader is entitled to know that the exact words in front of them were chosen by a translation process rather than by the speaker, because that is where nuance goes missing and where a dispute will start.</li>
+          <li><strong>A translated voiceover needs disclosure to the viewer.</strong> If a synthetic voice reads a translation over the original speaker, say so in the video, not only in the description. b5 covers the consent side and it applies here identically: never a synthetic version of a real person's own voice saying words they did not say.</li>
+          <li><strong>Keep the original audible or available.</strong> Subtitled original beats dubbed replacement whenever you have the choice, because the viewer can hear the person.</li>
+          <li><strong>Translation doubles the error classes.</strong> Every class above happens in the transcription step and then again in the translation step, and negations in particular move between languages in ways that are easy to break. A native speaker checks anything contested - machine translation is fine for the gist and unsafe for a quote at the centre of a disputed story.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: THE REST OF THE DESK ============ -->
+  <section class="section" id="desk">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the rest of the video week</span>
+      <h2>Where else AI belongs on a two-person video desk</h2>
+    </div>
+    <p class="lede">Clipping and subtitles are the two places where judgment is at stake. The rest of the week has genuine time savings in it, and a two-person desk that also shoots stills cannot afford to leave them on the table. Same sorting rule: <strong>automate the preparation, never the assertion.</strong></p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Rough cuts and the assembly edit: safe, and worth real hours<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Assembly is the part of video editing that is labour rather than judgment, and it is where the tools are strongest:</p>
+        <ul>
+          <li><strong>Logging and shot lists.</strong> Four hours of chamber footage indexed by who is speaking and when. This alone can save most of a day.</li>
+          <li><strong>Removing dead air and setup,</strong> plus syncing multiple angles and matching audio to camera.</li>
+          <li><strong>A first assembly against a script you wrote,</strong> in the order you specified. That is the tool arranging your decisions, not making them.</li>
+          <li><strong>Colour, level and stabilisation.</strong> Technical work with no meaning at stake, and the tools are excellent.</li>
+        </ul>
+        <p>The boundary is the usual one: the moment a tool decides <em>which</em> material is in and which is out, it has crossed from assembly into editing, and editing is the clip problem wearing a longer runtime.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Auto alt text and description, and where they fail<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Automatic alt text and video description are a real accessibility gain and a real trap, in the same object. What they do well is describe what is visually present. What they cannot do is know what it means.</p>
+        <ul>
+          <li><strong>They miss the news.</strong> "A group of people sitting at a table" is accurate and useless. The point of the picture is who those people are and what has just been voted on.</li>
+          <li><strong>They guess at identity.</strong> Naming a person from appearance is a guess presented as a fact, and a wrong one is a false attribution with a photograph attached.</li>
+          <li><strong>They miss text on screen.</strong> Placards, documents, chyrons, the number on the slide - frequently the entire reason the shot is in the piece.</li>
+          <li><strong>They are still worth running.</strong> A machine draft that a person corrects gets you full coverage. The failure mode is publishing the draft, not generating it.</li>
+        </ul>
+        <p>Practical rule: <strong>machine drafts alt text, a person writes what the image is doing in the story.</strong> Never let a tool name a person.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Vertical cuts for social that do not misrepresent the story<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Reframing to vertical is a crop, and a crop removes information. Usually that is fine. Sometimes it is the whole story:</p>
+        <ul>
+          <li><strong>Auto-reframe follows the loudest face,</strong> which means the person being challenged can vanish from frame at the moment they react. Check reaction shots by hand.</li>
+          <li><strong>Crops remove the room.</strong> An empty public gallery, a placard, the scale of a crowd. If the wide shot is evidence, do not crop it away.</li>
+          <li><strong>The question goes on screen.</strong> Vertical has no space for the exchange, so the missing half becomes a text card. That is not decoration, it is the context requirement from Part 1.</li>
+          <li><strong>Burn in the subtitles and the date,</strong> because the caption will not survive a repost and neither will your account name. A vertical cut is journalism published under your masthead, so it is signed off like journalism.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Archive footage and the caption that has to say when<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Reusing library footage is normal and legitimate, and the entire honesty of it lives in one line of caption. The rule your desk should write down tonight: <strong>every piece of archive footage carries, on screen, when it was shot and where.</strong> Not in the description. On screen, for as long as the footage is visible.</p>
+        <ul>
+          <li><strong>Because the viewer assumes now.</strong> Footage in a news piece reads as footage of the thing being reported, unless told otherwise, and viewers are right to read it that way.</li>
+          <li><strong>Because clips get reposted.</strong> Undated archive detached from your piece becomes evidence of whatever someone claims it shows.</li>
+          <li><strong>Because "file footage" is not enough.</strong> It says this is old without saying how old, and a five-year-old shot of a terminal that has since been rebuilt is misleading with a label on it.</li>
+        </ul>
+        <p>The rights side - what you own, what a freelance shoot licensed, what a co-production allows, what a contributor agreed to decades ago - is <strong>b8 Archives and search</strong>, which also covers making a library findable in the first place.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Synthetic video: illustration versus depiction<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The newsroom rule in one line, ahead of b7 taking it apart properly: <strong>you may illustrate, you may not depict.</strong></p>
+        <ul>
+          <li><strong>Illustration</strong> is a generated image that stands for an idea and does not claim to be a record of an event: an abstract, a diagram, a stylised motion background. It is labelled, and it is obviously not photography.</li>
+          <li><strong>Depiction</strong> is a generated image that claims, or can be read as claiming, that a thing happened or a person did something. Prohibited, and no label rescues it, because the label does not survive the repost and the frame does.</li>
+          <li><strong>Reconstructions are the grey zone,</strong> managed by convention: obviously non-photographic treatment, a permanent on-screen label, and never a real identifiable person's face or voice.</li>
+        </ul>
+        <p><strong>b7 Images and synthetic media</strong> covers this in full, along with labelling, C2PA on your own output, and what may never be generated under a masthead.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ BUILD-ALONG ============ -->
+  <section class="section" id="build">
+    <div class="section-kicker">
+      <span class="klabel">Build-along · 24 min</span>
+      <h2>Cut the chamber footage <span class="tag demo">★ everyone runs it</span></h2>
+    </div>
+    <p class="lede">Four hours of council chamber footage, the port expansion debate, and a social clip due tonight. Work in this order and notice that you decide the in and out points every single time, and the tool never does.</p>
+
+    <div class="steps">
+      <div class="step"><p>Log the footage and generate the timecoded transcript. Use it to find the exchanges, not to quote from.</p></div>
+      <div class="step"><p>Run the good prompt below. You get candidates with 60 seconds of context on each side and an omission note.</p></div>
+      <div class="step"><p>Watch each candidate in full context, at the footage. Kill any candidate whose meaning depends on what you would cut.</p></div>
+      <div class="step"><p>Cut your chosen exchange three ways: answer only, answer plus pause, and the full question-answer-follow-up. Watch all three back to back.</p></div>
+      <div class="step"><p>Write one line under each: what this clip implies. Then apply the test - would the speaker recognise their meaning here?</p></div>
+      <div class="step"><p>Subtitle the clip you kept. Watch it once with sound on, then do the targeted pass over negations, numbers and names.</p></div>
+      <div class="step"><p>Burn in subtitles and the shoot date for the social version, soft track for the site version. Then run the bad prompt and see what it picks.</p></div>
+    </div>
+
+    <div class="prompt-box good">
+      <span class="label">✅ Good - returns candidates with their context and their omissions</span>
+      <pre>Here is the timecoded transcript of council chamber footage, Harbour
+Ledger, port expansion debate.
+
+Propose CLIP CANDIDATES. For each one give me:
+  - in and out timecodes, to the second
+  - the verbatim text of the clip
+  - the 60 seconds immediately before and after, verbatim
+  - the question or motion the clip responds to, quoted in full
+  - WHAT THIS CLIP OMITS: one line naming the thing a viewer would
+    wrongly conclude from the clip alone
+  - whether a follow-up, challenge or correction occurs outside the
+    clip window, and at what timecode
+
+Hard constraints:
+  - Do NOT edit, join, trim or reorder anything.
+  - Do NOT remove a pause, a qualifier, a number or a unit.
+  - Do NOT propose a clip that starts after a question and ends
+    before its follow-up.
+  - Rank by newsworthiness, not by shareability.
+
+Return 6 candidates and nothing else.</pre>
+    </div>
+
+    <div class="prompt-box bad">
+      <span class="label">❌ Bad - optimises for the exact thing that breaks the context</span>
+      <pre>Find me the most shareable 30 seconds of this footage.</pre>
+    </div>
+
+    <div class="callout tip">
+      <strong>What the bad prompt actually did</strong>
+      Shareability and context are close to opposites. The most shareable 30 seconds of any contested exchange is the unqualified claim with the challenge removed, because qualification is what makes a clip travel less far. So the prompt reliably returns clip A: a real man, saying real words, in a frame that makes him claim something he corrected himself on ninety seconds later. Nothing was fabricated. The prompt simply asked for the version of reality that spreads fastest, and got it.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-40 min total</span></h2>
+    </div>
+    <ul>
+      <li>Take one real exchange from footage you have and cut it three ways: answer only, answer plus pause, full exchange with the follow-up. Write one line under each saying what it implies. Show all three to someone who was not in the room and ask what they think happened.</li>
+      <li>Run subtitles on a real piece and count the errors by class: names, numbers and units, technical terms, negations. Note how many you would have missed reading the file rather than watching it.</li>
+      <li>Find one negation in your subtitle file and check it against the audio specifically. Then check every other one.</li>
+      <li>Write your desk's caption rule for archive footage in one sentence, and check the last three pieces you published against it.</li>
+      <li>Take a clip you already published and ask what the most damaging 12 seconds of it would be if someone else re-clipped it. Then decide whether you would still publish it as cut.</li>
+      <li>Look at your last vertical cut and check whether the person being challenged is in frame when they react. Auto-reframe usually drops them.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session teaches the working core of newsroom video practice under AI: what clipping does to context, the subtitle pipeline and the human gate it cannot ship without, translation and localisation, and the caption rules that keep archive footage honest. Rights and licensing statements are orientation, not legal advice. This page covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">What a clip does to context - the question, the pause and the follow-up</span><span class="note">Part 1 · a clip is a different claim, not a shorter one</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The recognition test, and making clip judgment explicit rather than incidental</span><span class="note">Part 1 · the ten-second check you run at 11pm</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The subtitle pipeline and its mandatory human review gate</span><span class="note">Part 2 · watched with sound on, not proofread</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Four subtitle error classes - names, numbers and units, terms, negations</span><span class="note">Part 2 · a dropped negation is the highest-cost error</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Burned-in versus soft subtitles, and what it does to your ability to correct</span><span class="note">Part 2 · soft on site, burned-in for social, harder check on social</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Translation - disclosure for a synthetic voiceover, marking a translated quote</span><span class="note">Part 2 · consent rules for voice are in b5</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Auto-generated alt text and video description, and where they fail</span><span class="note">Part 3 · never let a tool name a person</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Synthetic video - illustration versus depiction under a masthead</span><span class="note">Part 3 self-study · full treatment in b7</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Archive footage, rights and contributor consent</span><span class="note">Part 3 · the caption rule here, the rights in b8</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · You cut 14 seconds of genuine footage: the answer, with the question removed. Nothing is altered. What have you published?</p>
+      <button class="qopt" type="button">A · A shorter version of the exchange, which is fine because every frame is real</button>
+      <button class="qopt" type="button">B · A different claim - he answered a narrow question, and without it he appears to be making a flat public statement he never made</button>
+      <button class="qopt" type="button">C · An unverified item, because clips cannot be verified</button>
+      <p class="qwhy">The deception lives entirely in the in and out points. Removing the question changes what the answer answers, which is why the question travels with the answer, on screen as text if it will not fit in the runtime. Genuine footage is not the same thing as a true clip.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Which subtitle error costs you the most, and why is it the hardest to spot in review?</p>
+      <button class="qopt" type="button">A · A dropped negation - it reverses the claim while leaving a fluent, quotable line on screen under a real person's face</button>
+      <button class="qopt" type="button">B · A misspelled place name, because it hurts search</button>
+      <button class="qopt" type="button">C · A missing subtitle at the very start of the clip</button>
+      <p class="qwhy">Names and terms announce themselves: a misheard term reads as nonsense and someone investigates. A dropped "not" reads perfectly. That is why the review pass is watching the video with sound on, plus a targeted second pass over every negation, number and name, rather than a proofread of the file.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">3 · You are publishing a translated quote from the chamber, with a synthetic voice reading it over the original. What is required?</p>
+      <button class="qopt" type="button">A · Nothing, provided the translation is accurate</button>
+      <button class="qopt" type="button">B · A note in the video description is sufficient for both</button>
+      <button class="qopt" type="button">C · Mark the quote as translated, disclose the synthetic voiceover in the video itself, and have a native speaker check anything contested</button>
+      <p class="qwhy">A reader is entitled to know that the exact words were chosen by a translation process rather than by the speaker, because that is where nuance goes and where a dispute starts. A description is not disclosure, since it does not survive a repost and is not what the viewer is watching. And machine translation is fine for the gist, unsafe for a quote at the centre of a disputed story.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Producer session 6 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>A clip is a different claim</b><span>Not a shorter exchange. Cut the question and the answer answers something else. Cut the pause and you invent a mood. Cut the follow-up and the challenge never happened.</span></div>
+      <div class="cheat-item"><b>The recognition test</b><span>Would the speaker recognise their own meaning in this clip? Not like it - recognise it. Ten seconds, works at 11pm.</span></div>
+      <div class="cheat-item"><b>Context travels or the clip does not ship</b><span>The question goes on screen if it will not fit in the runtime. Every clip carries a one-line note on what it omits.</span></div>
+      <div class="cheat-item"><b>Candidates, never cuts</b><span>A tool that returns in and out points with 60 seconds of context is helping. A tool that returns a finished cut has made your editorial decision for you.</span></div>
+      <div class="cheat-item"><b>The four subtitle errors</b><span>Names · numbers and units · technical terms · negations. A dropped "not" is the highest cost and the least visible, because the line still reads well.</span></div>
+      <div class="cheat-item"><b>The review gate</b><span>Watch the video with sound on at normal speed, then a targeted pass over every negation, number and name. Not a proofread of the file.</span></div>
+      <div class="cheat-item"><b>Burned-in or soft</b><span>Soft on your site: correctable, searchable, switchable. Burned-in for social: survives reposting, cannot be fixed, so check it harder.</span></div>
+      <div class="cheat-item"><b>Archive footage</b><span>When it was shot and where, on screen, for as long as it is visible. "File footage" is not enough. Rights questions are b8.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Producer session 6 of 10 · learn-ai-media-domain-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b5-audio-and-podcast.html">← Previous: Audio - transcription, editing, podcast</a> &nbsp;·&nbsp; <a href="b7-images-and-synthetic-media.html">Next: Images and synthetic media →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

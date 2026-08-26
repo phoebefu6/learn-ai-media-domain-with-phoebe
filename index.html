@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Fewer people, less money, more checking, lower trust. Search referrals are expected to fall about 43% in three years while verification demand rises and fewer than 1% of news images carry any provenance at all. Two tracks: editors get trust, rights, policy and the economics; producers work one story end to end with a live verification desk.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="learn ai media with phoebe - a two-track course on AI in the newsroom">
+<meta property="og:description" content="Fewer people, less money, more checking, lower trust. Two tracks: editors get trust, rights, policy and the economics; producers work one story end to end with a live verification desk.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="learn ai media with phoebe - a two-track course on AI in the newsroom">
+<meta name="twitter:description" content="Fewer people, less money, more checking, lower trust. Two tracks, one running story, a live verification desk.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>learn ai media with phoebe - a two-track course on AI in the newsroom</title>
+<link rel="stylesheet" href="assets/style.css?v=1">
+<style>
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: .85; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(14,116,144,.14); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 15.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--faint); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,#EDF7FA); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-edge { transition: opacity .15s ease; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI Media with Phoebe</div>
+    <h1>Two tracks into a newsroom that still gets believed</h1>
+    <p class="sub">Fewer people, less money, more checking, lower trust - all at once. Media leaders surveyed by the Reuters Institute expect search referrals to fall about 43% within three years, a fifth of them expect losses above 75%, and publisher traffic from Google already fell by roughly a third in a year, with the smallest publishers losing around 60%. Meanwhile rising demand for verification is named as one of the defining forces of the year, fewer than four in ten people say they trust the news they see, and fewer than 1% of news images published globally carry any provenance metadata at all. An editor track gives editors-in-chief and media executives the trust problem, the rights position, the newsroom policy and the economics after search. A producer track takes reporters and desk staff through one running story at the Harbour Ledger - a port expansion and its 40% emissions claim - with a live verification desk on the key pages where you watch a night of inbound climb from 1 out of 10 to 10 out of 10, and find out why the sixth toggle makes it worse.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="2">2</b><span>tracks</span></div>
+      <div class="stat"><b data-count="16">16</b><span>sessions</span></div>
+      <div class="stat"><b data-count="5">5</b><span>verification checks</span></div>
+      <div class="stat"><b data-count="45">45</b><span>min per session</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>The editor track 🎙️ <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· for editors-in-chief, heads of newsroom &amp; media execs · 6 x 45 min · decisions first</span></h2>
+      <p class="plede">Judgment mode: what AI genuinely changes in a media organisation, the provenance problem and why detection is not the answer to it, where you stand on rights and licensing, the newsroom policy and its red lines, what replaces referral traffic, and how to restructure without gutting the one asset the squeeze cannot take.</p>
+    </div>
+    <div class="course-grid">
+      <a class="course-card" href="courses/a1-what-ai-changes.html" style="--diff:#34D399">
+        <span class="cicon">📰</span>
+        <span class="cnum">Editor 1 · easy</span>
+        <h3>What AI actually changes in a media org</h3>
+        <p>The five forces the 2026 research names, the trust floor under four in ten, and an honest split of where AI helps versus where it costs you the masthead.</p>
+        <span class="meta"><span class="pill amber">▶ Editors start here</span></span>
+      </a>
+      <a class="course-card" href="courses/a2-trust-and-provenance.html" style="--diff:#34D399">
+        <span class="cicon">🔏</span>
+        <span class="cnum">Editor 2 · easy</span>
+        <h3>Trust and the provenance problem</h3>
+        <p>Deepfakes, C2PA and the under-1% reality, why a detector score is not publishable evidence, and the corrections policy that has to exist before you need it.</p>
+        <span class="meta"><span class="pill light">▶ Detector trap</span></span>
+      </a>
+      <a class="course-card" href="courses/a3-rights-and-licensing.html" style="--diff:#FBBF24">
+        <span class="cicon">⚖️</span>
+        <span class="cnum">Editor 3 · medium</span>
+        <h3>Rights, licensing and training data</h3>
+        <p>Who owns what, blocking versus licensing, and the sober picture: two thirds expect some AI licensing revenue, most of them expect it to be minor.</p>
+        <span class="meta"><span class="pill light">Your negotiating position</span></span>
+      </a>
+      <a class="course-card" href="courses/a4-newsroom-policy.html" style="--diff:#FBBF24">
+        <span class="cicon">📋</span>
+        <span class="cnum">Editor 4 · medium</span>
+        <h3>Newsroom policy and red lines</h3>
+        <p>Disclosure, human-in-the-loop, what may never be generated, who gets a byline, and the trigger that forces a correction rather than a quiet edit.</p>
+        <span class="meta"><span class="pill light">Write the policy</span></span>
+      </a>
+      <a class="course-card" href="courses/a5-audience-economics.html" style="--diff:#FB923C">
+        <span class="cicon">📉</span>
+        <span class="cnum">Editor 5 · deciding</span>
+        <h3>Audience economics after search</h3>
+        <p>The 43% expectation, the uneven damage by publisher size, and what actually replaces referral: direct audience, licensing, or a smaller newsroom.</p>
+        <span class="meta"><span class="pill light">Model your own numbers</span></span>
+      </a>
+      <a class="course-card" href="courses/a6-leading-the-change.html" style="--diff:#FB923C">
+        <span class="cicon">🧭</span>
+        <span class="cnum">Editor 6 · deciding</span>
+        <h3>Leading the change</h3>
+        <p>New roles, upskilling, what to tell the newsroom and what to tell the board, and restructuring without spending the trust you have left.</p>
+        <span class="meta"><span class="pill light">Strategy session</span></span>
+      </a>
+    </div>
+
+    <div class="diff-legend">
+      <span><i style="background:#34D399"></i>easy - orientation</span>
+      <span><i style="background:#FBBF24"></i>medium - real decisions</span>
+      <span><i style="background:#FB923C"></i>deciding - commit to a position</span>
+      <span><i style="background:#F87171"></i>hardest - assemble everything</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>The producer track 🗞️ <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· for reporters, producers &amp; desk editors · 10 x 45 min · one running story</span></h2>
+      <p class="plede">Hands-on mode: you work at the Harbour Ledger, 40 staff, a site, a daily newsletter, a weekly podcast and a video desk of two. The running story is the port expansion and its 40% emissions claim - a press release, a careful filing, a leaked spreadsheet, a disputed satellite image and a very confident spokesperson. Ten sessions take it from a tip to a published story in three formats with its provenance intact.</p>
+    </div>
+    <div class="course-grid">
+      <a class="course-card" href="courses/b1-the-media-ai-loop.html" style="--diff:#34D399">
+        <span class="cicon">🔁</span>
+        <span class="cnum">Producer 1 · easy</span>
+        <h3>The media practitioner's AI loop</h3>
+        <p>The publish chain and the gate in the middle of it, the trust line, the five checks, and the verification desk you will use all term.</p>
+        <span class="meta"><span class="pill amber">▶ Start here</span><span class="pill light">▶ Live desk</span></span>
+      </a>
+      <a class="course-card" href="courses/b2-verification.html" style="--diff:#FBBF24">
+        <span class="cicon">🔍</span>
+        <span class="cnum">Producer 2 · medium</span>
+        <h3>Verification and source checking</h3>
+        <p>The full check ladder from 1 out of 10 to 10 out of 10, what each check costs in minutes, and the detector that adds accusations instead of catches.</p>
+        <span class="meta"><span class="pill amber">▶ Signature session</span><span class="pill light">▶ Live desk</span></span>
+      </a>
+      <a class="course-card" href="courses/b3-story-development.html" style="--diff:#FBBF24">
+        <span class="cicon">📊</span>
+        <span class="cnum">Producer 3 · medium</span>
+        <h3>Finding the story in the data</h3>
+        <p>The leaked spreadsheet, the questions AI is genuinely good at, and the ones where it invents an answer with total confidence.</p>
+        <span class="meta"><span class="pill light">Data journalism</span></span>
+      </a>
+      <a class="course-card" href="courses/b4-writing-and-headlines.html" style="--diff:#FBBF24">
+        <span class="cicon">✍️</span>
+        <span class="cnum">Producer 4 · medium</span>
+        <h3>Writing and headlines at newsroom standard</h3>
+        <p>House style, the headline that is accurate rather than merely tempting, and the hard line between what AI drafts and what carries your byline.</p>
+        <span class="meta"><span class="pill light">Style + accuracy</span></span>
+      </a>
+      <a class="course-card" href="courses/b5-audio-and-podcast.html" style="--diff:#FBBF24">
+        <span class="cicon">🎧</span>
+        <span class="cnum">Producer 5 · medium</span>
+        <h3>Audio: transcription, editing, podcast</h3>
+        <p>Transcripts you can trust, edits that do not change meaning, synthetic voice and the consent it needs, and spotting a splice in someone else's clip.</p>
+        <span class="meta"><span class="pill light">Audio desk</span></span>
+      </a>
+      <a class="course-card" href="courses/b6-video-and-subtitles.html" style="--diff:#FB923C">
+        <span class="cicon">🎬</span>
+        <span class="cnum">Producer 6 · deciding</span>
+        <h3>Video, subtitles and clipping</h3>
+        <p>Rough cuts, accurate subtitles, localisation, and the honest question about clips: what does removing the context around 14 seconds actually do?</p>
+        <span class="meta"><span class="pill light">Context and cuts</span></span>
+      </a>
+      <a class="course-card" href="courses/b7-images-and-synthetic-media.html" style="--diff:#FB923C">
+        <span class="cicon">🖼️</span>
+        <span class="cnum">Producer 7 · deciding</span>
+        <h3>Images and synthetic media</h3>
+        <p>Illustration versus depiction, what may never be generated, labelling that a reader actually notices, and signing your own output with credentials.</p>
+        <span class="meta"><span class="pill light">The hardest red line</span></span>
+      </a>
+      <a class="course-card" href="courses/b8-archives-and-search.html" style="--diff:#FB923C">
+        <span class="cicon">🗄️</span>
+        <span class="cnum">Producer 8 · deciding</span>
+        <h3>Archives you can finally search</h3>
+        <p>Decades of tape, cuttings and photos made findable, the rights questions that arrive with it, and the stories already sitting in your own building.</p>
+        <span class="meta"><span class="pill light">Your own back catalogue</span></span>
+      </a>
+      <a class="course-card" href="courses/b9-distribution.html" style="--diff:#F87171">
+        <span class="cicon">📡</span>
+        <span class="cnum">Producer 9 · hardest</span>
+        <h3>Distribution when search stops sending</h3>
+        <p>Being cited by AI answers, newsletters and direct audience, social cuts that do not misrepresent you, and measuring what is actually left.</p>
+        <span class="meta"><span class="pill light">Life after referral</span></span>
+      </a>
+      <a class="course-card" href="courses/b10-capstone-one-story.html" style="--diff:#F87171">
+        <span class="cicon">🏁</span>
+        <span class="cnum">Producer 10 · hardest</span>
+        <h3>Capstone: one story, every format</h3>
+        <p>The port expansion from tip to publication in text, audio and video - verified, attributed, labelled, and scored against the desk one last time.</p>
+        <span class="meta"><span class="pill light">▶ Final gate</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths">
+      <h2>Choose your path 🧭</h2>
+      <p class="plede">Everyone starts at session 1 of their track. These are the shortcuts if you only have a few evenings.</p>
+      <div class="path"><b>🎙️ Editor (decide and lead)</b>
+        <a class="pstep" href="courses/a1-what-ai-changes.html">a1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a2-trust-and-provenance.html">a2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a3-rights-and-licensing.html">a3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a4-newsroom-policy.html">a4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a5-audience-economics.html">a5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a6-leading-the-change.html">a6</a>
+      </div>
+      <div class="path"><b>🗞️ Producer (the full story)</b>
+        <a class="pstep" href="courses/b1-the-media-ai-loop.html">b1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b2-verification.html">b2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b3-story-development.html">b3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b4-writing-and-headlines.html">b4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b5-audio-and-podcast.html">b5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b6-video-and-subtitles.html">b6</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b7-images-and-synthetic-media.html">b7</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b8-archives-and-search.html">b8</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b9-distribution.html">b9</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b10-capstone-one-story.html">b10</a>
+      </div>
+      <div class="path"><b>⚡ Verification fast lane</b>
+        <a class="pstep" href="courses/b1-the-media-ai-loop.html">b1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b2-verification.html">b2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b7-images-and-synthetic-media.html">b7</a><span class="parr">→</span>
+        <a class="pstep" href="courses/a2-trust-and-provenance.html">a2</a>
+      </div>
+      <div class="path"><b>🎬 Multiformat desk (audio + video)</b>
+        <a class="pstep" href="courses/b1-the-media-ai-loop.html">b1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b5-audio-and-podcast.html">b5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b6-video-and-subtitles.html">b6</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b8-archives-and-search.html">b8</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b9-distribution.html">b9</a>
+      </div>
+      <div class="path"><b>🚀 Full journey (lead AND make)</b>
+        <a class="pstep" href="courses/a1-what-ai-changes.html">a1-a6</a><span class="parr">→</span>
+        <a class="pstep" href="courses/b1-the-media-ai-loop.html">b1-b10</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">Both tracks at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>learn-ai-media-domain-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a> · taught from the Reuters Institute's Journalism, Media and Technology Trends and Predictions 2026 and Digital News Report 2026, the C2PA provenance standard, and long-standing newsroom verification practice</span>
+  </footer>
+</main>
+
+<script>
+window.MINDMAP_DATA = {
+  title: "Learn\nAI Media",
+  centerColor: "#0A4C60",
+  sessions: [
+    { label: "What AI\nchanges", href: "courses/a1-what-ai-changes.html", color: "#34D399",
+      concepts: [
+        { label: "The five 2026 forces", href: "courses/a1-what-ai-changes.html" },
+        { label: "Trust under 4 in 10", href: "courses/a1-what-ai-changes.html" } ] },
+    { label: "Trust &\nprovenance", href: "courses/a2-trust-and-provenance.html", color: "#34D399",
+      concepts: [
+        { label: "C2PA under 1%", href: "courses/a2-trust-and-provenance.html" },
+        { label: "Detection is not evidence", href: "courses/a2-trust-and-provenance.html" } ] },
+    { label: "Rights &\nlicensing", href: "courses/a3-rights-and-licensing.html", color: "#FBBF24",
+      concepts: [
+        { label: "Block or license", href: "courses/a3-rights-and-licensing.html" },
+        { label: "Mostly minor revenue", href: "courses/a3-rights-and-licensing.html" } ] },
+    { label: "Newsroom\npolicy", href: "courses/a4-newsroom-policy.html", color: "#FBBF24",
+      concepts: [
+        { label: "Disclosure + red lines", href: "courses/a4-newsroom-policy.html" },
+        { label: "The correction trigger", href: "courses/a4-newsroom-policy.html" } ] },
+    { label: "Audience\neconomics", href: "courses/a5-audience-economics.html", color: "#FB923C",
+      concepts: [
+        { label: "Referrals down ~43%", href: "courses/a5-audience-economics.html" },
+        { label: "Small publishers hit hardest", href: "courses/a5-audience-economics.html" } ] },
+    { label: "Leading\nthe change", href: "courses/a6-leading-the-change.html", color: "#FB923C",
+      concepts: [
+        { label: "New roles + upskilling", href: "courses/a6-leading-the-change.html" },
+        { label: "Restructure without trust loss", href: "courses/a6-leading-the-change.html" } ] },
+    { label: "The media\nAI loop", href: "courses/b1-the-media-ai-loop.html", color: "#34D399",
+      concepts: [
+        { label: "The publish chain", href: "courses/b1-the-media-ai-loop.html" },
+        { label: "Five checks", href: "courses/b1-the-media-ai-loop.html" },
+        { label: "The 10-item desk", href: "courses/b1-the-media-ai-loop.html" } ] },
+    { label: "Verification", href: "courses/b2-verification.html", color: "#FBBF24",
+      concepts: [
+        { label: "1/10 to 10/10", href: "courses/b2-verification.html" },
+        { label: "The detector anti-check", href: "courses/b2-verification.html" },
+        { label: "Minutes per check", href: "courses/b2-verification.html" } ] },
+    { label: "Story from\nthe data", href: "courses/b3-story-development.html", color: "#FBBF24",
+      concepts: [
+        { label: "The leaked spreadsheet", href: "courses/b3-story-development.html" },
+        { label: "Where models invent", href: "courses/b3-story-development.html" } ] },
+    { label: "Writing &\nheadlines", href: "courses/b4-writing-and-headlines.html", color: "#FBBF24",
+      concepts: [
+        { label: "House style", href: "courses/b4-writing-and-headlines.html" },
+        { label: "Accurate beats tempting", href: "courses/b4-writing-and-headlines.html" } ] },
+    { label: "Audio &\npodcast", href: "courses/b5-audio-and-podcast.html", color: "#FBBF24",
+      concepts: [
+        { label: "Edits that keep meaning", href: "courses/b5-audio-and-podcast.html" },
+        { label: "Synthetic voice consent", href: "courses/b5-audio-and-podcast.html" } ] },
+    { label: "Video &\nsubtitles", href: "courses/b6-video-and-subtitles.html", color: "#FB923C",
+      concepts: [
+        { label: "Cuts and context", href: "courses/b6-video-and-subtitles.html" },
+        { label: "Subtitles + localisation", href: "courses/b6-video-and-subtitles.html" } ] },
+    { label: "Images &\nsynthetic", href: "courses/b7-images-and-synthetic-media.html", color: "#FB923C",
+      concepts: [
+        { label: "Illustration vs depiction", href: "courses/b7-images-and-synthetic-media.html" },
+        { label: "Sign your own output", href: "courses/b7-images-and-synthetic-media.html" } ] },
+    { label: "Archives\n& search", href: "courses/b8-archives-and-search.html", color: "#FB923C",
+      concepts: [
+        { label: "Decades made findable", href: "courses/b8-archives-and-search.html" },
+        { label: "Rights in the archive", href: "courses/b8-archives-and-search.html" } ] },
+    { label: "Distribution", href: "courses/b9-distribution.html", color: "#F87171",
+      concepts: [
+        { label: "Cited by AI answers", href: "courses/b9-distribution.html" },
+        { label: "Direct audience", href: "courses/b9-distribution.html" } ] },
+    { label: "Capstone\none story", href: "courses/b10-capstone-one-story.html", color: "#F87171",
+      concepts: [
+        { label: "Text, audio, video", href: "courses/b10-capstone-one-story.html" },
+        { label: "Provenance intact", href: "courses/b10-capstone-one-story.html" } ] }
+  ]
+};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>

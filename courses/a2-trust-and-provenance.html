@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="What C2PA and Content Credentials actually prove, why absence is not evidence when fewer than 1% of news images carry them, why detection tools are not the answer, and the corrections policy you must write before you need it.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Trust and the provenance problem - learn ai media with phoebe">
+<meta property="og:description" content="Provenance proves a lot when it is there and nothing when it is missing. Detection answers the wrong question. Session 2 of the editor track.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/courses/a2-trust-and-provenance.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trust and the provenance problem - learn ai media with phoebe">
+<meta name="twitter:description" content="What provenance proves, what it does not, and why a detector score is not publishable.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Editor session 2 · Trust and the provenance problem - learn ai media with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-media-domain-with-phoebe</a> / Editor session 2 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI Media with Phoebe · Editor track · Session 2 of 6</div>
+    <h1>Trust and the <span class="accent">provenance problem</span></h1>
+    <p class="sub">Two beliefs are quietly running most picture desks right now, and both of them are wrong. The first is that missing Content Credentials are suspicious. Fewer than 1% of news images and videos published globally carry C2PA metadata, so absence is the overwhelming normal case and a policy built on it would have you disbelieving almost everything true. The second is that a detector solves this. It does not, because it answers a pixel question when your real question is provenance, and because a probability is not something you can print, defend in a correction, or say to a contributor you have just accused. Tonight: what provenance genuinely proves, where the chain breaks, why detection is the wrong purchase, and the corrections policy you have to write before the night you need it.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Editor track</span>
+      <span class="chip audience">Editors-in-chief · picture editors · standards leads</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-17 · What provenance proves</span>
+      <span class="a3" style="flex:4">17-31 · Why detection is not the answer</span>
+      <span class="a4" style="flex:4">31-45 · Corrections, contributors, rivals</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ PART 1: WHAT PROVENANCE PROVES ============ -->
+  <section class="section" id="provenance">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · the asymmetry</span>
+      <h2>What provenance proves, and what it does not <span class="tag concept">14 min live</span></h2>
+    </div>
+    <p class="lede">C2PA and Content Credentials attach a signed history to a file: what device or tool made it, what edits were applied, and by whom. Where that history is present and valid it is strong evidence, and it is strong quickly, which matters at 22:00. The reality check is adoption. Fewer than 1% of news images and videos published globally carry C2PA metadata today, with pilot adoption growing at agencies and broadcasters including the BBC. That single number decides your entire policy, and it decides it in one direction: <strong>absence is not evidence</strong>.</p>
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An image's journey from capture through a messaging app, a social platform and your CMS to the picture desk, showing where the credential chain survives, where it is stripped, and what a detector sees at each point.">
+        <style>
+          .pvT { font: 700 13px Inter, sans-serif; fill: #FFFFFF; }
+          .pvS { font: 400 11.5px Inter, sans-serif; fill: #FFFFFF; opacity: .92; }
+          .pvK { font: 700 10.5px Inter, sans-serif; fill: #E2711D; letter-spacing: .08em; }
+          .pvKy { font: 700 10.5px Inter, sans-serif; fill: #0E7490; letter-spacing: .08em; }
+          .pvKr { font: 700 10.5px Inter, sans-serif; fill: #991B1B; letter-spacing: .08em; }
+          .pvB { font: 400 11.5px Inter, sans-serif; fill: #16323A; }
+          .pvN { font: 600 13px Inter, sans-serif; fill: #5A2C05; }
+          .pvWire { stroke: #0E7490; stroke-width: 2.5; fill: none; marker-end: url(#pvHd); }
+        </style>
+        <defs>
+          <marker id="pvHd" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#0E7490"/>
+          </marker>
+        </defs>
+
+        <rect x="20" y="26" width="150" height="52" rx="8" fill="#0A4C60"/>
+        <text class="pvT" x="34" y="48">1 · CAPTURE</text>
+        <text class="pvS" x="34" y="66">phone or camera</text>
+        <rect x="190" y="26" width="150" height="52" rx="8" fill="#0E7490"/>
+        <text class="pvT" x="204" y="48">2 · MESSAGING</text>
+        <text class="pvS" x="204" y="66">sent to the desk</text>
+        <rect x="360" y="26" width="150" height="52" rx="8" fill="#0E7490"/>
+        <text class="pvT" x="374" y="48">3 · PLATFORM</text>
+        <text class="pvS" x="374" y="66">reposted, rescaled</text>
+        <rect x="530" y="26" width="150" height="52" rx="8" fill="#0E7490"/>
+        <text class="pvT" x="544" y="48">4 · YOUR CMS</text>
+        <text class="pvS" x="544" y="66">resized, recut</text>
+        <rect x="700" y="26" width="150" height="52" rx="8" fill="#0A4C60"/>
+        <text class="pvT" x="714" y="48">5 · YOUR DESK</text>
+        <text class="pvS" x="714" y="66">what you judge</text>
+
+        <path class="pvWire" d="M170,52 L186,52"/>
+        <path class="pvWire" d="M340,52 L356,52"/>
+        <path class="pvWire" d="M510,52 L526,52"/>
+        <path class="pvWire" d="M680,52 L696,52"/>
+
+        <rect x="20" y="106" width="150" height="62" rx="8" fill="#ECF9FC" stroke="#A5DCE8" stroke-width="2"/>
+        <text class="pvKy" x="34" y="126">CHAIN INTACT</text>
+        <text class="pvB" x="34" y="146">signed at capture,</text>
+        <text class="pvB" x="34" y="161">if the tool signs</text>
+        <rect x="190" y="106" width="150" height="62" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="pvKr" x="204" y="126">STRIPPED</text>
+        <text class="pvB" x="204" y="146">most apps drop</text>
+        <text class="pvB" x="204" y="161">metadata on send</text>
+        <rect x="360" y="106" width="150" height="62" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="pvKr" x="374" y="126">STRIPPED</text>
+        <text class="pvB" x="374" y="146">re-encoded, and</text>
+        <text class="pvB" x="374" y="161">the chain is gone</text>
+        <rect x="530" y="106" width="150" height="62" rx="8" fill="#FDF0E2" stroke="#E2711D" stroke-width="2"/>
+        <text class="pvK" x="544" y="126">YOURS TO KEEP</text>
+        <text class="pvB" x="544" y="146">only if you built</text>
+        <text class="pvB" x="544" y="161">it to preserve</text>
+        <rect x="700" y="106" width="150" height="62" rx="8" fill="#ECF9FC" stroke="#A5DCE8" stroke-width="2"/>
+        <text class="pvKy" x="714" y="126">WHAT ARRIVES</text>
+        <text class="pvB" x="714" y="146">usually nothing,</text>
+        <text class="pvB" x="714" y="161">and that is normal</text>
+
+        <rect x="20" y="194" width="150" height="62" rx="8" fill="#ECF9FC" stroke="#A5DCE8" stroke-width="2"/>
+        <text class="pvKy" x="34" y="214">DETECTOR SEES</text>
+        <text class="pvB" x="34" y="234">a clean original</text>
+        <text class="pvB" x="34" y="249">it rarely meets</text>
+        <rect x="190" y="194" width="150" height="62" rx="8" fill="#FDF0E2" stroke="#E2711D" stroke-width="2"/>
+        <text class="pvK" x="204" y="214">DETECTOR SEES</text>
+        <text class="pvB" x="204" y="234">recompression</text>
+        <text class="pvB" x="204" y="249">it cannot explain</text>
+        <rect x="360" y="194" width="150" height="62" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="pvKr" x="374" y="214">DETECTOR SEES</text>
+        <text class="pvB" x="374" y="234">artefacts piling</text>
+        <text class="pvB" x="374" y="249">up, layer on layer</text>
+        <rect x="530" y="194" width="150" height="62" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="pvKr" x="544" y="214">DETECTOR SEES</text>
+        <text class="pvB" x="544" y="234">your own edits,</text>
+        <text class="pvB" x="544" y="249">read as generated</text>
+        <rect x="700" y="194" width="150" height="62" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="pvKr" x="714" y="214">YOU GET</text>
+        <text class="pvB" x="714" y="234">a number nobody</text>
+        <text class="pvB" x="714" y="249">can explain</text>
+
+        <rect x="20" y="278" width="14" height="14" rx="3" fill="#E2711D"/>
+        <text class="pvN" x="44" y="290">The chain breaks in transit, not at capture. Absence tells you about the pipe, not the photo.</text>
+        <rect x="20" y="306" width="14" height="14" rx="3" fill="#E2711D"/>
+        <text class="pvN" x="44" y="318">Under 1% of news images carry credentials, so absence is normal and never a red flag.</text>
+        <rect x="20" y="334" width="14" height="14" rx="3" fill="#E2711D"/>
+        <text class="pvN" x="44" y="346">Presence is asymmetric: a valid chain proves a lot fast, a missing one sends you to the checks.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - where the credential chain survives and where it is stripped</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Reading the journey - the four things it tells you<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Walk the diagram left to right with your picture editor and the policy writes itself:</p>
+        <ul>
+          <li><strong>The chain is created once and destroyed many times.</strong> A credential is written at capture by a signing device or tool. Every hop afterwards - messaging app, platform repost, your own resize - is an opportunity for it to be stripped, and most hops take that opportunity by default.</li>
+          <li><strong>So the absence of a credential is a fact about the pipe, not about the photograph.</strong> The most common journey for a genuine, urgent, newsworthy image is precisely the journey that destroys its metadata: someone photographs it, sends it through a messaging app, and it is reposted twice before it reaches you.</li>
+          <li><strong>Presence is asymmetric and genuinely useful.</strong> A valid chain tells you the device, the edit history and the signer in seconds. That is real evidence and it is worth asking suppliers for. It just cannot be a requirement, because requiring it would reject almost everything true.</li>
+          <li><strong>Your own output is the part you actually control.</strong> Preserving provenance through your CMS and signing what you publish is the one lever on this diagram that is entirely yours. b7 covers the mechanics on the producer side.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The under-1% figure is the whole policy.</strong> The 2026 research puts C2PA on fewer than 1% of news images and videos published globally, with pilot adoption growing at agencies and broadcasters including the BBC. A picture desk that rejects uncredentialled images is not running a strict standard, it is running a standard that rejects roughly 99 out of every 100 real photographs while catching nothing, because a fabricated image is exactly as uncredentialled as a genuine one.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What to do instead - the five checks, and what they cost you<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Provenance is one check of five, not a replacement for the other four. This is the b1 and b2 spine, and as an editor your job is to know what each one costs so you can tell when someone skipped it and why:</p>
+        <table class="clean">
+          <thead>
+            <tr><th>Check</th><th>Catches</th><th>Realistic cost</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Reverse search</td><td>A real picture of the wrong event</td><td>About 90 seconds, and it catches more than anything else</td></tr>
+            <tr><td>Metadata and C2PA</td><td>File history where it survived</td><td>Two minutes. Usually returns nothing, which is normal</td></tr>
+            <tr><td>Two independent sources</td><td>Matched errors from one origin</td><td>Ten to thirty minutes, and the one most often faked</td></tr>
+            <tr><td>Primary document</td><td>A release that overstates a filing</td><td>An hour or a day. Where the port story lives</td></tr>
+            <tr><td>Expert call</td><td>Claims that are technically impossible</td><td>Five minutes, and the first thing cut on deadline</td></tr>
+          </tbody>
+        </table>
+        <p>Two things follow for you rather than for the desk. First, the cheapest check on the list is the one your staff cut first, which is a scheduling problem, not a standards problem. Second, when something wrong gets published, the diagnostic question is which check was missing, not who was careless. Blaming the shift produces a quieter newsroom and the same error next month.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What you can reasonably ask of suppliers and contributors<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Ask agencies whether they sign.</strong> Some do, in pilots. Make it a question in the supply conversation rather than a condition of supply, and note the answer in your records.</li>
+          <li><strong>Ask contributors for the original file, not a forward, and for the unedited frames either side.</strong> Both cost the contributor nothing, and an original off the device often retains capture metadata the forwarded copy has lost. A person who was actually there has the neighbouring frames. Never ask anyone to prove a negative: "show me this is not AI" is unanswerable, and it is how you insult a real photographer.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: WHY DETECTION IS NOT THE ANSWER ============ -->
+  <section class="section" id="detection">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the wrong purchase</span>
+      <h2>Why detection is not the answer <span class="tag concept">14 min live</span></h2>
+    </div>
+    <p class="lede">When synthetic media floods in, the instinctive executive move is to buy a detector. It is the wrong purchase for structural reasons rather than quality reasons, and no improvement in the tools fixes any of them. A detector answers "were these pixels generated?" Your actual question is "where did this file come from and what happened to it?" Those are different questions, and only the second one produces a sentence you can print.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 384" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The detector question versus the provenance question side by side, showing what each can support in print and what each costs.">
+        <style>
+          .dqT { font: 700 13px Inter, sans-serif; fill: #FFFFFF; }
+          .dqS { font: 400 11.5px Inter, sans-serif; fill: #FFFFFF; opacity: .92; }
+          .dqKr { font: 700 10.5px Inter, sans-serif; fill: #991B1B; letter-spacing: .08em; }
+          .dqKy { font: 700 10.5px Inter, sans-serif; fill: #0E7490; letter-spacing: .08em; }
+          .dqB { font: 400 11.5px Inter, sans-serif; fill: #16323A; }
+          .dqN { font: 600 13px Inter, sans-serif; fill: #5A2C05; }
+        </style>
+        <rect x="20" y="26" width="410" height="52" rx="8" fill="#991B1B"/>
+        <text class="dqT" x="40" y="48">THE DETECTOR QUESTION</text>
+        <text class="dqS" x="40" y="66">were these pixels generated?</text>
+
+        <rect x="450" y="26" width="410" height="52" rx="8" fill="#0A4C60"/>
+        <text class="dqT" x="470" y="48">THE PROVENANCE QUESTION</text>
+        <text class="dqS" x="470" y="66">where did this file come from, and what happened to it?</text>
+
+        <rect x="20" y="98" width="410" height="86" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="dqKr" x="40" y="120">WHAT IT SUPPORTS IN PRINT</text>
+        <text class="dqB" x="40" y="142">A probability, and only internally. There is no</text>
+        <text class="dqB" x="40" y="160">publishable sentence at the end of it, no line you</text>
+        <text class="dqB" x="40" y="178">can put in a correction, nothing to say to a source.</text>
+
+        <rect x="450" y="98" width="410" height="86" rx="8" fill="#ECF9FC" stroke="#A5DCE8" stroke-width="2"/>
+        <text class="dqKy" x="470" y="120">WHAT IT SUPPORTS IN PRINT</text>
+        <text class="dqB" x="470" y="142">A sentence with a subject: who shot it, when and</text>
+        <text class="dqB" x="470" y="160">where, what was changed, who confirmed it, and</text>
+        <text class="dqB" x="470" y="178">which document the number actually came from.</text>
+
+        <rect x="20" y="200" width="410" height="86" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="dqKr" x="40" y="222">WHAT IT COSTS YOU</text>
+        <text class="dqB" x="40" y="244">Your own resizing, recompression and colour work</text>
+        <text class="dqB" x="40" y="262">look like generation to it. A false accusation costs</text>
+        <text class="dqB" x="40" y="280">a contributor, a supplier, and then the masthead.</text>
+
+        <rect x="450" y="200" width="410" height="86" rx="8" fill="#FDF0E2" stroke="#E2711D" stroke-width="2"/>
+        <text class="dqKy" x="470" y="222">WHAT IT COSTS YOU</text>
+        <text class="dqB" x="470" y="244">Minutes, and a phone call. The five checks run in</text>
+        <text class="dqB" x="470" y="262">order on the clock, with the cheapest one first and</text>
+        <text class="dqB" x="470" y="280">the expert call the one nobody should be cutting.</text>
+
+        <rect x="20" y="302" width="14" height="14" rx="3" fill="#E2711D"/>
+        <text class="dqN" x="44" y="314">On the b1 desk at 10 of 10, the detector added no catch and one false accusation.</text>
+        <rect x="20" y="330" width="14" height="14" rx="3" fill="#E2711D"/>
+        <text class="dqN" x="44" y="342">A false negative costs one story. A false accusation costs a relationship, then the masthead.</text>
+        <rect x="20" y="358" width="14" height="14" rx="3" fill="#E2711D"/>
+        <text class="dqN" x="44" y="370">A probability is not publishable, not defensible in a correction, not sayable to a person.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the pixel question versus the provenance question</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The four structural failures, and the honest desk result<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Each of these is a reason no version of the product will work, not a complaint about a particular vendor:</p>
+        <ul>
+          <li><strong>It answers the wrong question.</strong> Generation is a property of pixels. Truth is a property of origin. A perfectly real photograph of a staged event is entirely genuine and entirely misleading, and no detector will ever have an opinion about that.</li>
+          <li><strong>Your own pipeline destroys the evidence it needs.</strong> By the time an image reaches your desk it has been resized, recompressed and colour-corrected by several systems, and those operations produce exactly the artefacts a detector reads as generation. You are feeding it a degraded file and asking it for certainty.</li>
+          <li><strong>A probability is not publishable.</strong> "Our tool scored it 87%" cannot go in a story, cannot go in a correction, cannot be defended to a supplier, and cannot be said out loud to a contributor you have just accused of faking their work.</li>
+          <li><strong>The asymmetry is brutal.</strong> A false negative costs you one story. A false accusation costs you a relationship with a photographer or a community contact, and enough of those cost you the masthead. Those two errors are not commensurable, and a tool that trades one for the other is not a bargain.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Report the desk result honestly, including the part that is inconvenient.</strong> On the b1 verification desk, with all five checks running and the score at 10 out of 10, switching on the AI detector produced no additional catch and one false accusation: it flagged a genuine wire photograph of a council vote and implied a supplier had faked it. The genuinely synthetic item in that night's inbound had already been caught by file history. A tool that adds accusations without adding catches has a negative contribution, however reassuring it feels to have bought something.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What to say when the board asks why you have not bought one<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>You will be asked, and "our editor does not like them" will not survive the meeting. Use the structure, not the sentiment:</p>
+        <div class="steps">
+          <div class="step"><p>Name the question the tool answers, and the question you actually need answered. They are different, and the difference is the whole argument.</p></div>
+          <div class="step"><p>Give the desk numbers. All five checks at 10 out of 10; add the detector and it goes to 9 with one false accusation against a real wire photo.</p></div>
+          <div class="step"><p>Price the two failure modes. One missed story versus one destroyed supplier relationship plus a public accusation you cannot substantiate.</p></div>
+          <div class="step"><p>Say what you are buying instead: protected verification hours, an original-file policy with contributors, and signing on your own output.</p></div>
+        </div>
+        <p>If the board still wants a detector, agree one condition in writing: its output may never be cited as a reason to publish or to accuse, and may only ever trigger one of the five checks. That turns a liability into a triage hint, which is the only role it can honestly hold.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: POLICY, PEOPLE, RIVALS ============ -->
+  <section class="section" id="policy">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the documents and the conversations</span>
+      <h2>Corrections, contributors and rivals <span class="tag concept">14 min · live and self-study</span></h2>
+    </div>
+    <p class="lede">Everything above is preparation for four situations you will actually face: publishing an error, wrongly suspecting a real person, watching a rival publish something you believe is fabricated, and deciding whether to sign your own output. Three of the four go badly if the policy is written on the night.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The corrections policy that must exist before you need it<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A corrections policy is not a paragraph about integrity. It is four operational answers, agreed in advance, and written where a duty editor can find them at 22:40:</p>
+        <table class="clean">
+          <thead>
+            <tr><th>Question</th><th>What the policy must say</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>What triggers a correction rather than a quiet edit?</td><td>Any change to a fact a reader could have acted on, any change to a claim, a number, an attribution or an identification. Typos and broken links are quiet edits. If in doubt it is a correction, and the doubt itself is recorded.</td></tr>
+            <tr><td>Who can authorise one?</td><td>Named roles, not a committee, with a named deputy for nights and weekends. If only one person can authorise, your policy fails at the exact moment it is needed.</td></tr>
+            <tr><td>How fast?</td><td>A stated clock from the moment the desk is convinced, not from the moment everyone agrees. Slow corrections are how a small error becomes a story about you.</td></tr>
+            <tr><td>Where does it appear?</td><td>On the item itself, with a timestamp and what changed, plus wherever the original travelled: newsletter, podcast notes, social cut, syndication partners. An unpropagated correction is a half correction.</td></tr>
+          </tbody>
+        </table>
+        <p>Two additions matter now and did not five years ago. The policy must cover synthetic material you published in error, because a generated image used as illustration and read as depiction is a correction and not a caption fix. And it must cover the case where <em>you</em> were wrong about something being fake, which is the correction nobody has drafted and the one that ends up in front of a lawyer.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>When you have wrongly suspected a contributor<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>It will happen, because the base rate of uncredentialled genuine images is near total and somebody will over-apply a rule. Handle it as a relationship failure, which is what it is:</p>
+        <ul>
+          <li><strong>Go first and go directly.</strong> The editor makes the call, not the person who raised the doubt and not an email. A photographer who has been accused of faking their work has been accused of the only thing that ends their career.</li>
+          <li><strong>Say what you checked and what you got wrong.</strong> Naming the process is what separates an apology from a management sentence. "We ran a detector, it flagged your file, and we should not have treated that as evidence" is honest and it is also the truth.</li>
+          <li><strong>Fix the rule out loud.</strong> Tell them what changes so it does not happen again, and then change it. Contributors talk to each other, and the story that travels is which outlet fixed it.</li>
+          <li><strong>Never ask them to prove the negative.</strong> If you need something, ask for the original file or the frames either side, and explain that it is a routine ask you make of everyone.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The rule worth writing down tonight</strong>
+          No tool output alone may ever be communicated to a contributor as a reason for suspicion. A human states what they checked, in words a person can respond to. This one line prevents most of the damage in this whole session.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>When a rival publishes something you believe is fabricated<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Tempting, dangerous, and occasionally the best story of the week. The order matters:</p>
+        <ul>
+          <li><strong>Do not match it.</strong> The reflex to publish because a competitor did is the single most reliable route to a shared correction. Two outlets running one unverified origin is one source wearing two hats.</li>
+          <li><strong>Run your own five checks on their material.</strong> If they have a claim you cannot stand up, you have a story about a claim, not about them.</li>
+          <li><strong>Go to them privately first, once.</strong> If they correct, that is the system working and you have lost nothing. If they do not, your reporting is now on the record and stronger for the attempt.</li>
+          <li><strong>Publish the method, not the verdict, and never lead with a detector result.</strong> "Here is what we checked and what we found" is defensible. "Their image is AI-generated" on the strength of a score is the accusation you cannot substantiate, it invites the same treatment back, and it turns the argument into one about tooling where your rival's best defence writes itself.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Signing your own output, and why it is a collective act<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The under-1% figure has one obvious implication that most editors skip: the base rate only rises if publishers raise it. Every signed image you publish makes the credential signal fractionally more meaningful for everyone, including your competitors, which is why this feels like unrewarded work and is not.</p>
+        <ul>
+          <li><strong>It is the only part of the chain you control.</strong> You cannot make a messaging app preserve metadata. You can make your own CMS stop stripping it.</li>
+          <li><strong>It is cheap once and expensive to retrofit.</strong> Preserving provenance through the pipeline is a configuration decision. Reconstructing it for an archive is a project. b8 has the archive version of this pain.</li>
+          <li><strong>It is a differentiator you can state, and it sets up a3 and a4.</strong> In a market where fewer than four in ten people trust the news they see, saying what you sign and why is a claim about method rather than virtue. Rights conversations also go better when you can prove what is yours, and a disclosure policy is easier to enforce when the pipeline records what happened.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Trust under four in ten, and what actually moves it<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Fewer than four in ten people report trusting the news they see, and the shift toward social platforms and AI chatbots is expected to push it lower. The instinct is a campaign about being trustworthy. That does not work, and it is worth understanding why: an assertion of virtue is exactly what an untrustworthy outlet would also make, so it carries no information.</p>
+        <p>What moves it is showing the method:</p>
+        <ul>
+          <li><strong>Show the work in the work.</strong> "We reviewed the 180-page filing and here is the paragraph the press release summarised" is a trust act. A trust badge is not.</li>
+          <li><strong>Publish corrections visibly.</strong> Counterintuitive and consistently supported by practice: an outlet that corrects openly reads as more reliable than one that never appears to be wrong.</li>
+          <li><strong>Name the human, and say what AI did.</strong> The trust line exists because a reader needs to know the claim, the attribution and the correction came from a person, and anonymous certainty now reads as automation. Specific disclosure ("this transcript was machine-generated and checked against the recording") beats a general policy statement nobody reads. a4 turns this into written red lines.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 40-50 min total</span></h2>
+    </div>
+    <ul>
+      <li>Write or revise the <strong>corrections trigger</strong>: what forces a correction rather than a quiet edit. One paragraph, agreed with your standards lead, findable at 22:40 by a duty editor who did not write it.</li>
+      <li>Audit whether your own published images carry any provenance at all. Take ten from last week and check. If none do, you are inside the under-1%, and the fix is a pipeline configuration, not a project.</li>
+      <li>Run one real inbound image through the five checks and <strong>time each one</strong>. Bring the times to the next session. Most newsrooms discover the expert call is five minutes and was the one they skipped.</li>
+      <li>Add the one-line rule to your standards doc: no tool output alone may be communicated to a contributor as a reason for suspicion. Then ask one agency supplier whether they sign their output, and write down the answer whatever it is.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">Provenance standards and adoption figures move fast, so re-verify the C2PA number before quoting it externally. The corrections and contributor guidance here is editorial practice, not legal advice, and defamation stays with your counsel. This page covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">C2PA and Content Credentials - what a signed history proves and where the chain breaks</span><span class="note">Part 1 · diagram 1 and the live card</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Adoption reality - fewer than 1% of news images or videos published globally carry C2PA</span><span class="note">Part 1 · pilots at agencies and broadcasters including the BBC</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Why AI-detection tools are not evidence - the four structural failures</span><span class="note">Part 2 · the b1 desk result at 10 of 10</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The corrections policy - trigger, authoriser, speed, placement</span><span class="note">Part 3 · red lines and disclosure land in a4</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Reuters Institute Digital News Report 2026 - trust under four in ten</span><span class="note">Part 3 self-study · the economics of it in a5</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The five checks and what each one costs in minutes</span><span class="note">Part 1 · full practitioner treatment in b2</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Signing your own output and preserving provenance in the pipeline</span><span class="note">Part 3 · mechanics in b7, archive version in b8</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Your picture desk proposes rejecting any inbound image that has no Content Credentials. What is wrong with the policy?</p>
+      <button class="qopt" type="button">A · Nothing - it is the strongest standard currently available to a picture desk</button>
+      <button class="qopt" type="button">B · Fewer than 1% of news images published globally carry C2PA, so the rule rejects almost everything true while catching nothing, since a fabricated file is equally uncredentialled</button>
+      <button class="qopt" type="button">C · C2PA only applies to video, so the rule would have no effect on still images</button>
+      <p class="qwhy">Provenance is asymmetric. Presence is strong evidence quickly; absence is the overwhelming default, and it is a fact about the pipe rather than the photograph. The most common journey for a genuine urgent image - captured, sent through a messaging app, reposted twice - is exactly the journey that strips the metadata.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · A detection tool scores an inbound photograph 87% likely generated. What may you publish on that basis?</p>
+      <button class="qopt" type="button">A · That the image is fabricated, citing the tool and its score</button>
+      <button class="qopt" type="button">B · That the image is disputed, attributing the doubt to AI analysis</button>
+      <button class="qopt" type="button">C · Nothing - a probability is not a claim, and your own pipeline's resizing and recompression look like generation to it</button>
+      <p class="qwhy">There is no publishable sentence at the end of a score. It cannot go in a correction, cannot be defended to a supplier, and cannot be said to a contributor you have just accused. On the b1 desk at 10 out of 10 the detector added no catch and one false accusation against a genuine wire photograph.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · When should a corrections policy be written?</p>
+      <button class="qopt" type="button">A · Before you need it, with the trigger, the authoriser, the speed and the placement all agreed and findable by a duty editor at 22:40</button>
+      <button class="qopt" type="button">B · Within 24 hours of the first serious error, while the details are fresh</button>
+      <button class="qopt" type="button">C · Once a year during the standards review, so it reflects current practice</button>
+      <p class="qwhy">A policy written on the night is written by people who are frightened and short of time, and it will be shaped by the specific error rather than by principle. It also has to survive nights and weekends, which means named deputies, and it has to cover the correction nobody drafts: the one where you were wrong about something being fake.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Editor session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Absence is not evidence</b><span>Under 1% of news images published globally carry C2PA. Missing credentials are the normal case and tell you about the pipe, not the photo.</span></div>
+      <div class="cheat-item"><b>Presence is asymmetric</b><span>A valid chain gives you device, edits and signer in seconds. Ask for it, never require it.</span></div>
+      <div class="cheat-item"><b>Where the chain breaks</b><span>Created once at capture, destroyed at every hop: messaging app, platform repost, your own resize. Your CMS is the one hop you control.</span></div>
+      <div class="cheat-item"><b>The wrong question</b><span>A detector asks whether pixels were generated. You need to know where the file came from and what happened to it.</span></div>
+      <div class="cheat-item"><b>The desk result</b><span>At 10 of 10 with all five checks, the detector added no catch and one false accusation against a real wire photo. Negative contribution.</span></div>
+      <div class="cheat-item"><b>The one-line rule</b><span>No tool output alone may be given to a contributor as a reason for suspicion. A human states what they checked, in words a person can answer.</span></div>
+      <div class="cheat-item"><b>Corrections policy</b><span>Trigger · authoriser and night deputy · a stated clock · placement on the item and everywhere it travelled. Written before you need it.</span></div>
+      <div class="cheat-item"><b>What moves trust</b><span>Showing your method, not asserting your virtue. Visible corrections, a named human, and specific disclosure of what AI did.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Editor session 2 of 6 · learn-ai-media-domain-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a1-what-ai-changes.html">← Previous: What AI actually changes</a> &nbsp;·&nbsp; <a href="a3-rights-and-licensing.html">Next: Rights, licensing and training data →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

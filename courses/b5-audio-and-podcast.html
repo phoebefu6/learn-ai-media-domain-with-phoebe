@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Machine transcription is fast and wrong in predictable places, and every one of them sits where a contested story is hardest to check. Session 5 covers the four high-risk zones, the edit line an audio cut may never cross, spotting a splice in a file someone sends you, and the podcast workflow with AI in the safe places only.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Audio: transcription, editing, podcast - learn ai media with phoebe">
+<meta property="og:description" content="The four high-risk zones in any machine transcript, the edit line an audio cut may never cross, and the podcast workflow with AI in the safe places only.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/courses/b5-audio-and-podcast.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Audio: transcription, editing, podcast - learn ai media with phoebe">
+<meta name="twitter:description" content="The four high-risk zones in any machine transcript, and the edit line an audio cut may never cross.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-ai-media-domain-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Producer session 5 · Audio: transcription, editing, podcast - learn ai media with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-ai-media-domain-with-phoebe</a> / Producer session 5 of 10</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn AI Media with Phoebe · Producer track · Session 5 of 10</div>
+    <h1>Audio: transcription, editing, <span class="accent">podcast</span></h1>
+    <p class="sub">You have 50 minutes of interview with the port's operations director sitting on a drive, a newsletter going out in the morning and a podcast on Thursday. Machine transcription will hand you the full text of that interview in about the time it takes to make coffee, and it will be wrong in specific, predictable places: the names, the numbers, the technical terms, the accents, the crosstalk. Which is to say, wrong in exactly the places a contested story turns on. Tonight you get the four high-risk zones and the listen-back habit that covers them, the edit line an audio cut may never cross, the reverse skill of spotting a splice in a file someone sends you, and the podcast workflow with AI in the safe places and out of the unsafe ones.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Producer track</span>
+      <span class="chip audience">Audio producers · reporters · podcast teams</span>
+      <span class="chip audience">Bring a raw interview</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-15 · Transcripts and the edit line</span>
+      <span class="a3" style="flex:5">15-40 · Build-along: cut the interview</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where this sits in the chain</h2>
+    </div>
+    <p class="lede">The publish chain from b1 runs <strong>Tip → Verify → Report → Package → Publish</strong>, and stage 2 is a gate rather than a step. This session and the next are <strong>Package</strong>. That sounds like the safe end of the chain, and it is not. Packaging is where a verified fact quietly turns into a claim the speaker never made: a transcript puts a sentence in the wrong mouth, an edit removes the qualifier that was the entire story, a clip answers a question nobody asked. The trust line - <strong>the claim, the attribution, the correction</strong> - is easiest to break here, because nothing looks like it is being invented. Everything in tonight's audio is real. The failure is in what got joined, trimmed or relabelled on the way out.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill inkpill">Official sources covered</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A listen-back habit that covers the four places transcripts reliably fail, your desk's one-line rule for what an audio edit may never do, and a clip-shortlist prompt that is structurally incapable of joining two answers together.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: TRANSCRIPTS ============ -->
+  <section class="section" id="transcripts">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · what a transcript actually is</span>
+      <h2>A transcript is not a record of what was said <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">A machine transcript is a <strong>best guess at the audio, rendered in the confident typography of a document</strong>. That last part is the problem. Nothing on the page tells you which words the model was sure about and which it invented to fill a gap, so a 3% error rate does not feel like a 3% error rate, it feels like a finished text. And the errors are not scattered evenly. They cluster on proper nouns, on figures and units, on domain vocabulary, on accented speech, and on any moment where two people talk over each other. Those are the same passages you will want to quote.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 418" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A passage of machine transcript from the port interview with four high-risk zones marked - names, numbers, technical terms and crosstalk - and what each error would do to the published quote.">
+        <style>
+          .trH { font: 700 13px Inter, sans-serif; fill: #0A4C60; letter-spacing: .04em; }
+          .trL { font: 400 12.5px Inter, sans-serif; fill: #16323A; }
+          .trSp { font: 700 12.5px Inter, sans-serif; fill: #5F7C85; }
+          .trHi { font: 700 12.5px Inter, sans-serif; fill: #5A2C05; }
+          .trK { font: 700 10.5px Inter, sans-serif; fill: #E2711D; letter-spacing: .08em; }
+          .trKr { font: 700 10.5px Inter, sans-serif; fill: #991B1B; letter-spacing: .08em; }
+          .trB { font: 400 11.5px Inter, sans-serif; fill: #16323A; }
+          .trC { font: 700 11.5px Inter, sans-serif; fill: #991B1B; }
+          .trN { font: 600 13px Inter, sans-serif; fill: #5A2C05; }
+          .trW { stroke: #0E7490; stroke-width: 2.5; fill: none; marker-end: url(#trHead); }
+        </style>
+        <defs><marker id="trHead" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#0E7490"/></marker></defs>
+
+        <text class="trH" x="20" y="30">MACHINE TRANSCRIPT · PORT OPERATIONS DIRECTOR · 00:31:12</text>
+        <rect x="20" y="46" width="840" height="112" rx="8" fill="#ECF9FC" stroke="#A5DCE8" stroke-width="2"/>
+        <text class="trL" x="36" y="72"><tspan class="trSp">OPS DIRECTOR:</tspan> Councillor <tspan class="trHi">Atkinson</tspan> put that to us back in March, yes.</text>
+        <text class="trL" x="36" y="96"><tspan class="trSp">REPORTER:</tspan> And the <tspan class="trHi">birthing</tspan> plan is what gets you to a forty per cent cut?</text>
+        <text class="trL" x="36" y="120"><tspan class="trSp">OPS DIRECTOR:</tspan> <tspan class="trHi">Forty per cent.</tspan> That is the figure in the release, yes.</text>
+        <text class="trL" x="36" y="144"><tspan class="trSp">OPS DIRECTOR:</tspan> <tspan class="trHi">[inaudible]</tspan> which is not the same thing at all, is it.</text>
+        <path class="trW" d="M270,158 L270,180"/><path class="trW" d="M610,158 L610,180"/>
+
+        <rect x="20" y="186" width="200" height="116" rx="8" fill="#FDF0E2" stroke="#E2711D" stroke-width="2"/>
+        <text class="trK" x="34" y="208">1 · NAMES</text><text class="trB" x="34" y="232">heard: Cllr Atkinson</text><text class="trB" x="34" y="250">said: Cllr Aitcheson</text>
+        <text class="trC" x="34" y="274">the quote lands on</text><text class="trC" x="34" y="290">the wrong councillor</text>
+
+        <rect x="230" y="186" width="200" height="116" rx="8" fill="#FDF0E2" stroke="#E2711D" stroke-width="2"/>
+        <text class="trK" x="244" y="208">2 · NUMBERS</text><text class="trB" x="244" y="232">heard: forty per cent</text><text class="trB" x="244" y="250">said: 40% per box</text>
+        <text class="trC" x="244" y="274">you print the press</text><text class="trC" x="244" y="290">release, not the filing</text>
+
+        <rect x="440" y="186" width="200" height="116" rx="8" fill="#FDF0E2" stroke="#E2711D" stroke-width="2"/>
+        <text class="trK" x="454" y="208">3 · TERMS</text><text class="trB" x="454" y="232">heard: birthing plan</text><text class="trB" x="454" y="250">said: berthing plan</text>
+        <text class="trC" x="454" y="274">reads as nonsense,</text><text class="trC" x="454" y="290">so a sub "fixes" it</text>
+
+        <rect x="650" y="186" width="200" height="116" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="trKr" x="664" y="208">4 · CROSSTALK</text><text class="trB" x="664" y="232">heard: one speaker</text><text class="trB" x="664" y="250">said: two, overlapping</text>
+        <text class="trC" x="664" y="274">the quote lands in</text><text class="trC" x="664" y="290">the wrong mouth</text>
+
+        <rect x="20" y="330" width="14" height="14" rx="3" fill="#E2711D"/><text class="trN" x="44" y="342">Accents and crosstalk raise the error rate exactly where a contested story is hardest to check.</text>
+        <rect x="20" y="358" width="14" height="14" rx="3" fill="#E2711D"/><text class="trN" x="44" y="370">Listen back to every passage you intend to quote. At the audio, not at the text.</text>
+        <rect x="20" y="386" width="14" height="14" rx="3" fill="#E2711D"/><text class="trN" x="44" y="398">Zone 4 is the dangerous one: the words are right, the speaker is not, and nothing looks wrong.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the four high-risk zones in a machine transcript</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Diarisation: the most dangerous transcript failure there is<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Speaker diarisation is the model's guess at <em>who is talking</em>, and it is a separate guess from the words. That separation is why it is so dangerous. A word error looks like a word error: "birthing plan" stops you, because it is nonsense. A diarisation error produces a perfectly fluent, perfectly plausible sentence attached to the wrong human being.</p>
+        <ul>
+          <li><strong>It fails where speakers overlap,</strong> and on similar voices. Interruptions and agreements force the model to cut the stream somewhere, and it cuts it wrong, or it collapses two people of similar register into one label.</li>
+          <li><strong>It fails at the top of the file.</strong> Labels are assigned before the model has heard much of anyone, so the first two minutes are the least reliable and are often where the framing is set.</li>
+          <li><strong>It fails silently.</strong> There is no confidence marker on a speaker tag. SPEAKER 1 looks exactly as certain on line 400 as on line 4.</li>
+        </ul>
+        <p>The consequence is the worst outcome on the trust line: <strong>an accurate quote, correctly transcribed, attributed to a person who did not say it.</strong> You cannot correct that quietly. It is not a typo, it is a false attribution, and the person it lands on is entitled to be furious about it.</p>
+        <div class="callout tip">
+          <strong>The one habit that covers all four zones</strong>
+          Before any passage goes in a script, a newsletter or a show, open the audio at that timecode and listen to it. Not the sentence, the thirty seconds around it. This takes about forty seconds per quote and it catches names, numbers, terms and speaker swaps in one pass, because you are checking against the thing that actually happened rather than against a text that already looks finished.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What a transcript is genuinely good for<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>None of this means do not transcribe. Transcription is one of the strongest things AI does for a newsroom, and refusing it costs far more than it saves. It is excellent for <strong>navigation</strong> (finding the four minutes in fifty that matter, so you listen to the right part properly rather than the whole thing badly), <strong>search across a body of audio</strong> (six interviews on the port expansion become searchable text, which is genuinely new capability and is what b8 is built on), <strong>sharing with a desk</strong>, and <strong>accessibility</strong>, which Part 3 comes back to.</p>
+        <p>The line is between <strong>using a transcript to find things</strong> and <strong>using a transcript as the record</strong>. The first is what it is for. The second is what gets corrected. Three habits keep you on the right side of it: never strip the timecodes, because a quote you cannot listen back to should not be published; tag anything you have not heard yourself as <code>[CHECK AUDIO]</code> and clear the tags by hand; and keep the raw machine output alongside your corrected version, because if a dispute arises you want both, plus the original recording, which is the only actual evidence.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: THE EDIT LINE ============ -->
+  <section class="section" id="edit-line">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the rule you write tonight</span>
+      <h2>The edit line <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Every audio desk edits. Removing an "um" is not deception, it is courtesy to the listener, and a newsroom that refuses to tighten anything is not being more honest, it is being less listenable. The line is not between edited and unedited. It is between <strong>edits that change how something sounds</strong> and <strong>edits that change what was said</strong>. That line is crossable by accident, at speed, with good intentions, which is why it needs to be written down on your desk rather than held in someone's head.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 424" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One interview answer shown as a waveform with its segments, and three candidate edits - removing the um, tightening the pause, and cutting the qualifier - with the reason each is or is not allowed.">
+        <style>
+          .edH { font: 700 13px Inter, sans-serif; fill: #0A4C60; letter-spacing: .04em; }
+          .edT { font: 700 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .edTi { font: 700 12.5px Inter, sans-serif; fill: #16323A; }
+          .edS { font: 400 11px Inter, sans-serif; fill: #FFFFFF; opacity: .92; }
+          .edSi { font: 400 11px Inter, sans-serif; fill: #16323A; opacity: .85; }
+          .edC { font: 700 12.5px Inter, sans-serif; fill: #0A4C60; }
+          .edP { font: 700 10.5px Inter, sans-serif; fill: #FFFFFF; letter-spacing: .06em; }
+          .edB { font: 400 11.5px Inter, sans-serif; fill: #16323A; }
+          .edN { font: 600 13px Inter, sans-serif; fill: #5A2C05; }
+          .edWave { stroke: #A5DCE8; stroke-width: 3; stroke-linecap: round; fill: none; }
+          .edW { stroke: #0E7490; stroke-width: 2.5; fill: none; marker-end: url(#edHead); }
+        </style>
+        <defs><marker id="edHead" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#0E7490"/></marker></defs>
+
+        <text class="edH" x="20" y="28">ONE ANSWER, 41 SECONDS, FROM THE 50-MINUTE INTERVIEW</text>
+        <path class="edWave" d="M26,62 V90 M50,50 V102 M74,42 V110 M98,56 V96 M122,46 V106 M146,64 V88 M170,52 V100 M194,40 V112 M218,58 V94 M242,48 V104 M266,62 V90 M290,50 V102 M314,42 V110 M338,56 V96 M362,46 V106 M386,64 V88 M410,52 V100 M434,40 V112 M458,58 V94 M482,48 V104 M506,62 V90 M530,50 V102 M554,42 V110 M578,56 V96 M602,46 V106 M626,64 V88 M650,52 V100 M674,40 V112 M698,58 V94 M722,48 V104 M746,62 V90 M770,50 V102 M794,42 V110 M818,56 V96 M842,46 V106"/>
+
+        <rect x="20" y="122" width="90" height="48" rx="7" fill="#0A4C60"/><text class="edT" x="65" y="151" text-anchor="middle">QUESTION</text>
+        <rect x="116" y="122" width="200" height="48" rx="7" fill="#0E7490"/><text class="edT" x="216" y="145" text-anchor="middle">THE ANSWER</text><text class="edS" x="216" y="161" text-anchor="middle">"a forty per cent cut"</text>
+        <rect x="322" y="122" width="55" height="48" rx="7" fill="#A5DCE8"/><text class="edTi" x="349" y="151" text-anchor="middle">um</text>
+        <rect x="383" y="122" width="70" height="48" rx="7" fill="#A5DCE8"/><text class="edTi" x="418" y="145" text-anchor="middle">pause</text><text class="edSi" x="418" y="161" text-anchor="middle">2 sec</text>
+        <rect x="459" y="122" width="180" height="48" rx="7" fill="#E2711D"/><text class="edT" x="549" y="145" text-anchor="middle">THE QUALIFIER</text><text class="edS" x="549" y="161" text-anchor="middle">per container, by 2031</text>
+        <rect x="645" y="122" width="215" height="48" rx="7" fill="#0E7490"/><text class="edT" x="752" y="145" text-anchor="middle">THE REST OF IT</text><text class="edS" x="752" y="161" text-anchor="middle">"on our own projection"</text>
+        <path class="edW" d="M349,170 L349,190"/><path class="edW" d="M549,170 L549,190"/>
+
+        <rect x="20" y="196" width="270" height="118" rx="8" fill="#ECF9FC" stroke="#A5DCE8" stroke-width="2"/>
+        <text class="edC" x="36" y="220">EDIT 1 · REMOVE THE "UM"</text><rect x="36" y="230" width="110" height="22" rx="6" fill="#0E7490"/><text class="edP" x="48" y="245">ALLOWED</text>
+        <text class="edB" x="36" y="276">Nothing the speaker meant has</text><text class="edB" x="36" y="294">changed. Standard tidying.</text>
+
+        <rect x="305" y="196" width="270" height="118" rx="8" fill="#ECF9FC" stroke="#A5DCE8" stroke-width="2"/>
+        <text class="edC" x="321" y="220">EDIT 2 · TIGHTEN THE PAUSE</text><rect x="321" y="230" width="150" height="22" rx="6" fill="#E2711D"/><text class="edP" x="333" y="245">ALLOWED WITH CARE</text>
+        <text class="edB" x="321" y="276">Shorten it, fine. Delete it and</text><text class="edB" x="321" y="294">hesitation becomes certainty.</text>
+
+        <rect x="590" y="196" width="270" height="118" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+        <text class="edC" x="606" y="220">EDIT 3 · CUT THE QUALIFIER</text><rect x="606" y="230" width="190" height="22" rx="6" fill="#991B1B"/><text class="edP" x="618" y="245">NEVER - CHANGES MEANING</text>
+        <text class="edB" x="606" y="276">"per container, by 2031" is the</text><text class="edB" x="606" y="294">story. Cutting it invents a claim.</text>
+
+        <rect x="20" y="344" width="14" height="14" rx="3" fill="#E2711D"/><text class="edN" x="44" y="356">An edit may remove ums, tighten a pause and cut a digression. It may reorder nothing.</text>
+        <rect x="20" y="372" width="14" height="14" rx="3" fill="#E2711D"/><text class="edN" x="44" y="384">Joining two answers is not an edit. It is a sentence the speaker never said.</text>
+        <rect x="20" y="400" width="14" height="14" rx="3" fill="#E2711D"/><text class="edN" x="44" y="412">Test every cut against one question: would the speaker recognise their own meaning here?</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - one answer, three candidate edits, and where the line falls</figcaption>
+    </figure>
+
+    <table class="clean">
+      <thead><tr><th>An audio edit may</th><th>An audio edit may never</th></tr></thead>
+      <tbody>
+        <tr><td>Remove filler - ums, ahs, false starts</td><td>Join two answers, or two calls, into one</td></tr>
+        <tr><td>Tighten a long pause without deleting it</td><td>Remove a qualifier, a unit or a hedge</td></tr>
+        <tr><td>Cut a whole digression that stands alone</td><td>Change the question a clip appears to answer</td></tr>
+        <tr><td>Fix level, hum, clipping and room noise</td><td>Make a hesitation sound like certainty</td></tr>
+        <tr><td>Trim the top and tail of an answer</td><td>Reorder anything, at any scale, ever</td></tr>
+      </tbody>
+    </table>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The reverse skill: spotting a splice in audio someone sends you<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>The item from the b1 desk:</strong> a piece of audio circulating online in which a chief executive appears to admit price fixing. It is not synthetic. There is no generated voice in it, nothing a detector could ever have flagged. It is <strong>two real sentences, spoken by the real person, taken from two different calls and joined.</strong> Every individual word is authentic. The admission is fabricated.</p>
+        <ul>
+          <li><strong>Room tone shifts.</strong> Every space has a noise floor. A join between two recordings steps between two different floors, and the step is audible at the splice point once you know to listen for it.</li>
+          <li><strong>Breath that does not continue.</strong> People breathe in patterns across a sentence. A splice interrupts the pattern: a phrase starting without the in-breath that should precede it, or an in-breath leading nowhere.</li>
+          <li><strong>Impossible cadence, and codec seams.</strong> Two clauses at slightly different speaking rates or pitch centres, welded at a plausible comma. Two phone calls also compress differently, so hiss and handset colouration change at the join.</li>
+          <li><strong>No question anywhere.</strong> An admission with no audible prompt around it is a shape that almost never occurs naturally. Ask what was asked.</li>
+        </ul>
+        <p>And the ordinary journalism, which matters more than any of the above: <strong>ask for the full recording.</strong> A source with a genuine clip usually has the call it came from. A source who cannot produce the surrounding audio has told you something important.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>This is the item on the b1 desk that only the expert call caught.</strong> Reverse search returns nothing, because the audio is not a reused file. Metadata and C2PA return nothing, because a re-encoded audio file carries no useful history. An AI detector returns nothing useful, because nothing was generated. What caught it was five minutes with someone who knew the company and the calls, who said the two sentences came from meetings months apart. The cheapest check on the list, and the only one that worked.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Synthetic voice: consent from the person, disclosure to the listener<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Voice cloning and text-to-speech have real newsroom uses, and pretending otherwise loses you accessibility and multilingual reach for no benefit. The uses that hold up: <strong>a translated read</strong> of a piece published in another language; <strong>a voiced correction or a voiced article</strong>, turning text you already published into audio; <strong>accessibility reads</strong> of newsletters; and <strong>continuity for a presenter who has consented in writing</strong> to a cloned voice within named limits.</p>
+        <p>Two requirements sit on top of all of these, and neither is negotiable:</p>
+        <ul>
+          <li><strong>Consent from the person whose voice it is.</strong> Specific, written and scoped: what it may be used for, for how long, and how it is revoked. A voice is not newsroom property because that person once recorded for you, and a staff contract is not consent to be cloned.</li>
+          <li><strong>Disclosure to the listener.</strong> Said in the audio, not only written in the show notes, because the show notes are not what the listener is hearing. "This translation is read by a synthetic voice" costs three seconds.</li>
+        </ul>
+        <p>And the hard prohibition: <strong>never synthesise a real person saying something they did not say.</strong> Not for illustration, not for a reconstruction, not with a label, because the label does not survive a repost and the audio does. Dramatised readings remain fine under the old convention - a clearly different voice, an explicit "read by an actor", verbatim words from a document you hold. b7 covers the equivalent rule for images and takes illustration versus depiction all the way through.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: THE PODCAST WORKFLOW ============ -->
+  <section class="section" id="workflow">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the weekly show, end to end</span>
+      <h2>Where AI belongs in the podcast week</h2>
+    </div>
+    <p class="lede">The Harbour Ledger's podcast is one producer, one presenter and whoever on the desk has something to say that week. The realistic question is not whether to use AI in that workflow, it is which stages it may touch. The sorting rule is the one from b1: <strong>automate the preparation, never the assertion.</strong></p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The workflow, stage by stage, with the line drawn<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Safe - AI prepares, you check:</strong></p>
+        <ul>
+          <li><strong>Rough transcript</strong> of every recording, immediately, timecodes intact. The highest-value item in the whole week.</li>
+          <li><strong>Chapter marks</strong> proposed from the transcript. You rename them, because a chapter title is an editorial claim about what a segment contains.</li>
+          <li><strong>Show notes draft</strong> from the transcript, then rewritten by a person, with every name, number and link verified against the audio rather than against the draft.</li>
+          <li><strong>Clip candidates with timecodes</strong> and full surrounding context, plus levelling, de-essing and noise reduction, where no meaning is at stake.</li>
+        </ul>
+        <p><strong>Unsafe - a person owns this or it does not happen:</strong></p>
+        <ul>
+          <li><strong>Choosing the clip.</strong> A clip is an editorial claim about what the interview was, which is the whole of b6 Part 1.</li>
+          <li><strong>Making the cut.</strong> Anything that joins, trims or reorders speech is the edit line, and the edit line is human.</li>
+          <li><strong>Writing what someone said.</strong> Show notes that paraphrase a guest into a sharper sentence than they used are a misquote with better copywriting.</li>
+          <li><strong>Any voice that is not the person's own, and publishing itself.</strong> Someone's name is on it, and that is the trust line.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Correcting in audio, where nobody re-listens<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Text corrections work because the corrected page replaces the wrong one at the same address. Audio has no such mechanism. Somebody downloaded Thursday's episode on Thursday, and they are never going to hear whatever you say about it the following Thursday. Plan for that:</p>
+        <ul>
+          <li><strong>Correct at the top of the next episode.</strong> Not at the end, where the audience has already gone. Read it plainly and briefly.</li>
+          <li><strong>Correct in the show notes of the wrong episode.</strong> Notes are usually editable in place even when the audio is not, and this is the one thing a late listener will actually see.</li>
+          <li><strong>Re-cut and re-upload for anything serious.</strong> A false attribution or a wrong figure at the centre of a story justifies replacing the file, with a note saying it was replaced and why.</li>
+          <li><strong>Correct the transcript too, and never replace an episode silently.</strong> The transcript is the searchable record, and a file that changes without a note is the audio equivalent of stealth-editing a story.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Accessibility: the genuine, unambiguous win<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Most of this session is about restraint. This card is not. Transcripts for every piece of audio you publish used to be a budget line most desks could not carry, and now they are close to free. That is a real expansion of who can use your journalism.</p>
+        <ul>
+          <li><strong>Publish a transcript with every episode,</strong> corrected in the four high-risk zones and labelled honestly - "auto-generated, lightly edited" is fair, presenting an unchecked machine transcript as the record is not.</li>
+          <li><strong>It is also an archive and a search asset.</strong> Published transcripts make years of audio findable, which is b8's territory, and they are how audio journalism shows up in search and answer systems at all. Fix the transcript whenever you correct the audio: two records of one episode that disagree is worse than one.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Archival audio and the rights that come with it<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The moment transcription is cheap, someone suggests running the whole tape library through it, and they are right to. The questions that arrive with it are rights questions rather than technical ones:</p>
+        <ul>
+          <li><strong>What did the contributor agree to?</strong> An interview recorded in 1998 for a radio programme was probably not licensed for indefinite podcast reuse, and definitely not for voice cloning.</li>
+          <li><strong>Who owns the recording?</strong> Freelance, co-production and syndicated material frequently is not yours to republish, whatever is on the shelf. Archive audio is also full of cleared-at-the-time music whose licences have long since expired.</li>
+          <li><strong>People who are now private, or dead.</strong> Findability changes the ethics. Material nobody could locate in 1998 is a different object once it is fully searchable.</li>
+        </ul>
+        <p><strong>b8 Archives and search</strong> takes all of these properly, including how to make decades of tape findable without publishing anything you do not have the right to publish.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ BUILD-ALONG ============ -->
+  <section class="section" id="build">
+    <div class="section-kicker">
+      <span class="klabel">Build-along · 25 min</span>
+      <h2>Cut the 50-minute interview <span class="tag demo">★ everyone runs it</span></h2>
+    </div>
+    <p class="lede">You have the operations director on tape for 50 minutes. You need three things by tomorrow: a two-minute podcast segment, one social clip, and two quotes for the newsletter. Run it in this order, and notice that the transcript is used to <em>find</em> and never to <em>quote</em>.</p>
+
+    <div class="steps">
+      <div class="step"><p>Transcribe the full 50 minutes with timecodes. Do not correct anything yet. Read it once, fast, purely to find where the story is.</p></div>
+      <div class="step"><p>Confirm speaker labels at the top of the file by ear. The first two minutes are the least reliable, and every label downstream inherits them.</p></div>
+      <div class="step"><p>Run the good prompt below for a clip shortlist. You get candidates with full context, not cuts.</p></div>
+      <div class="step"><p>Open the audio at each candidate timecode and listen to the surrounding minute. Kill any candidate whose meaning depends on what you would cut.</p></div>
+      <div class="step"><p>Make the cut yourself: ums out, pause tightened not deleted, qualifier untouched, nothing joined, nothing reordered.</p></div>
+      <div class="step"><p>For the two newsletter quotes, listen back one final time and check the four zones: name, number, term, speaker.</p></div>
+      <div class="step"><p>Now run the bad prompt on the same file and compare its output line by line against the transcript. Find the join.</p></div>
+    </div>
+
+    <div class="prompt-box good">
+      <span class="label">✅ Good - produces candidates, structurally cannot produce a cut</span>
+      <pre>You have the timecoded transcript of a 50-minute interview with the port
+operations director, Harbour Ledger, port expansion story.
+
+Produce a CLIP SHORTLIST only. For each candidate give me:
+  - start and end timecode, to the second
+  - the verbatim transcript text of the clip
+  - the 60 seconds before and the 60 seconds after, verbatim
+  - the question the clip is answering, quoted in full
+  - one line: what a listener would NOT know from the clip alone
+
+Hard constraints:
+  - Do NOT edit, trim, tighten, paraphrase or clean up any text.
+  - Do NOT join material from different timecodes into one quote.
+  - Do NOT remove qualifiers, hedges, numbers or units.
+  - Do NOT alter or infer speaker labels; report them as given.
+  - Mark anything unclear as [CHECK AUDIO] rather than guessing.
+
+Return 6 candidates ranked by newsworthiness, and nothing else.</pre>
+    </div>
+
+    <div class="prompt-box bad">
+      <span class="label">❌ Bad - silently joins and trims, and hands you the result as finished work</span>
+      <pre>Pull the best quotes from this interview and tighten them for broadcast.
+Keep it punchy - drop the ums, cut the waffle, and give me clean
+20-second clips I can drop straight into the show.</pre>
+    </div>
+
+    <div class="callout tip">
+      <strong>What the bad prompt actually did</strong>
+      "Tightened for broadcast" is an instruction to change the words, and the model will follow it. In practice it drops the qualifier, because the qualifier is the least punchy part of the sentence, and it welds the strongest clause of one answer to the strongest clause of another because that reads better than either alone. You get a quote that is fluent, quotable and never said. The transcript will not flag it, because a polished summary is what you were handed, and you have no timecodes to check it against.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Try it yourself - this week <span class="tag exercise">◐ 30-40 min total</span></h2>
+    </div>
+    <ul>
+      <li>Transcribe a real interview you have already published from. Listen back to every passage you quoted, and count the errors by zone: names, numbers, technical terms, crosstalk. Most people find at least one in a twenty-minute file.</li>
+      <li>Check the speaker labels in the first two minutes of that file specifically. If they are wrong there, work out how far the error propagated.</li>
+      <li>Write your desk's one-line rule for what an audio edit may never do, in words a freelancer could follow on their first shift. Put it where the edit happens, not in a policy document.</li>
+      <li>Take one clip you have published and ask the test question honestly: would the speaker recognise their own meaning in it?</li>
+      <li>Run both prompts from the build-along on the same file and diff the outputs. Keep the diff - it is the most persuasive thing you can show an editor who wants clips faster.</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session teaches the working core of newsroom audio practice under AI: what a machine transcript is, where it fails, what an edit may do, and what consent and disclosure are required before a synthetic voice is published. Rights and contract questions are orientation rather than legal advice, and stay with your counsel. This page covers:</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Machine transcription failure zones - names, numbers, technical terms, accents, crosstalk</span><span class="note">Part 1 · the listen-back habit that covers all four</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Speaker diarisation error and the misattributed quote</span><span class="note">Part 1 · the most dangerous transcript failure there is</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The edit line - what an audio edit may and may never do</span><span class="note">Part 2 · the rule your desk writes tonight</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Spotting a splice - the price-fixing clip from the b1 desk</span><span class="note">Part 2 · two real sentences, two calls, caught by the expert call</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Synthetic voice - consent from the voice owner, disclosure to the listener</span><span class="note">Part 2 · generation rules in full in b7</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The podcast workflow, correcting in audio, and transcripts as accessibility</span><span class="note">Part 3 · the safe stages and the unsafe ones</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Reuters Institute 2026 - rising demand for verification work as a defining force</span><span class="note">Part 2 · the frame is set in b1, the check ladder in b2</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Archival audio, contributor consent and expired music licences</span><span class="note">Part 3 self-study · full treatment in b8</span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Which transcript error is the most dangerous, and why?</p>
+      <button class="qopt" type="button">A · A misheard technical term, because it makes the transcript unreadable</button>
+      <button class="qopt" type="button">B · A speaker diarisation error, because the words are correct and fluent but attached to a person who did not say them</button>
+      <button class="qopt" type="button">C · A misspelled place name, because search engines will not index it</button>
+      <p class="qwhy">A word error stops you, because it reads as nonsense and someone investigates. A diarisation error produces a perfectly plausible sentence in the wrong mouth, with no confidence marker and nothing to catch the eye. That is a false attribution rather than a typo, and it cannot be corrected quietly.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Your editor wants a tighter clip. Which of these crosses the edit line?</p>
+      <button class="qopt" type="button">A · Removing three ums and a false start from a 40-second answer</button>
+      <button class="qopt" type="button">B · Shortening a two-second pause to one second, leaving the pause audible</button>
+      <button class="qopt" type="button">C · Joining the strongest clause of one answer to the strongest clause of another so the point lands in one sentence</button>
+      <p class="qwhy">Filler removal and pause tightening change how something sounds. Joining two answers changes what was said: it manufactures a sentence the speaker never uttered, out of words they genuinely used. That is the exact mechanism behind the price-fixing clip, where every individual word is authentic and the admission is fabricated.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · You want to publish a translated read of an article in a synthetic voice. What is required?</p>
+      <button class="qopt" type="button">A · Consent from the person whose voice it is, scoped and in writing, plus disclosure to the listener in the audio itself</button>
+      <button class="qopt" type="button">B · Nothing, as long as the translation is accurate</button>
+      <button class="qopt" type="button">C · An AI detector result showing the audio is flagged as synthetic</button>
+      <p class="qwhy">Both requirements stand together. A voice does not become newsroom property because someone once recorded for you, and a note buried in the show notes is not disclosure, because show notes are not what the listener is hearing. The hard prohibition sits above both: never synthesise a real person saying something they did not say.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Producer session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The four high-risk zones</b><span>Names · numbers and units · technical terms · crosstalk. Accents raise the rate across all four. That is where a contested story lives.</span></div>
+      <div class="cheat-item"><b>The listen-back habit</b><span>Never quote from a transcript you have not heard. Open the audio at the timecode and listen to the thirty seconds around it. About forty seconds per quote.</span></div>
+      <div class="cheat-item"><b>Diarisation is the worst one</b><span>Right words, wrong mouth, no confidence marker, perfectly fluent. Confirm labels in the first two minutes, because everything downstream inherits them.</span></div>
+      <div class="cheat-item"><b>An edit may</b><span>Remove ums, tighten a pause, cut a whole digression, fix level and noise, trim top and tail.</span></div>
+      <div class="cheat-item"><b>An edit may never</b><span>Join two answers, remove a qualifier or unit, change the question a clip appears to answer, make hesitation sound like certainty, reorder anything.</span></div>
+      <div class="cheat-item"><b>Spotting a splice</b><span>Room tone steps, breath that does not continue, cadence and codec shifts, an admission with no audible question. Then ask for the full recording.</span></div>
+      <div class="cheat-item"><b>Synthetic voice</b><span>Consent from the voice owner, scoped and written. Disclosure in the audio, not the show notes. Never a real person saying what they did not say.</span></div>
+      <div class="cheat-item"><b>Correcting in audio</b><span>Top of the next episode, in the wrong episode's show notes, in the transcript, and re-cut for anything serious. Never replace a file silently.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Producer session 5 of 10 · learn-ai-media-domain-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="b4-writing-and-headlines.html">← Previous: Writing and headlines at newsroom standard</a> &nbsp;·&nbsp; <a href="b6-video-and-subtitles.html">Next: Video, subtitles and clipping →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
