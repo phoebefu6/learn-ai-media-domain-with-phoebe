@@ -89,9 +89,9 @@ body {
 }
 .agenda span { padding: .45rem .3rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .agenda .a1 { background: var(--indigo-deep); }
-.agenda .a2 { background: var(--indigo-mid); }
-.agenda .a3 { background: var(--amber); color: var(--amber-ink); }
-.agenda .a4 { background: var(--indigo-soft); }
+.agenda .a2 { background: #1B7F97; color: #fff; }
+.agenda .a3 { background: #B45A17; color: #fff; }
+.agenda .a4 { background: var(--indigo-soft); color: var(--ink); }
 
 /* ---------- toolbar ---------- */
 .toolbar {
